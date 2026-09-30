@@ -1,0 +1,46 @@
+---
+title: "将 MiyaIP 与 AdsPower 反检测浏览器集成"
+sidebarTitle: "概览"
+description: "在 AdsPower 浏览器环境中使用 MiyaIP 住宅代理，以独立的干净 IP 身份管理多个账号。"
+---
+
+AdsPower 是一款专业的反检测浏览器，专为多账号管理而设计。它创建的每个浏览器配置文件都携带自己独立的环境指纹，即用户代理、Canvas、WebGL、字体以及数十种其他浏览器参数的独特组合。当你将一个 AdsPower 配置文件与 MiyaIP 住宅代理配对时，你管理的每个账号看起来都像是从真实住宅地点的真实独立设备发起的。其结果是一个令人信服且稳定的身份，大大降低了触发平台欺诈检测或账号封禁的可能性。
+
+<Note>
+  还没有 AdsPower？使用 MiyaIP 推荐链接下载或创建账号：[https://www.adspower.net/share/miyaip](https://www.adspower.net/share/miyaip)
+</Note>
+
+## 为什么 MiyaIP 与 AdsPower 配合出色
+
+反检测浏览器负责**浏览器指纹**层面，使每个配置文件看起来像是不同的设备。MiyaIP 负责**网络身份**层面，为每个配置文件提供与真实互联网用户匹配的干净住宅 IP 地址。两者结合，覆盖了平台用于关联或标记账号的两个最受关注的信号：
+
+- **指纹隔离**：AdsPower 确保没有两个配置文件共享 Canvas 哈希、字体、时区或硬件签名。
+- **住宅 IP 身份**：MiyaIP 提供真正的住宅 IP，不会出现在数据中心或代理黑名单上。
+
+## 支持的代理类型
+
+在 AdsPower 中配置 MiyaIP 静态住宅代理时，可以使用以下任意协议：
+
+- **SOCKS5**：推荐用于大多数场景，支持 TCP 和 UDP 流量。
+- **HTTP**：标准网页代理协议。
+- **HTTPS**：基于 TLS 加密的 HTTP。
+
+你可以在 AdsPower 的代理配置步骤中选择首选协议。
+
+## 下一步
+
+准备好设置你的第一个配置文件了吗？请按照分步指南，在 AdsPower 浏览器环境中配置 MiyaIP 静态代理。
+
+<CardGroup cols={2}>
+  <Card title="静态代理设置" icon="arrow-right" href="/zh/integrations/adspower-static-proxy">
+    分步指南：提取 MiyaIP 代理凭据，并配置到 AdsPower 浏览器配置文件中。
+  </Card>
+
+  <Card title="AdsPower 官网" icon="browser" href="https://www.adspower.net/share/miyaip">
+    使用 MiyaIP 推荐链接下载 AdsPower 或注册账号。
+  </Card>
+
+  <Card title="代理类型" icon="network-wired" href="/zh/proxy-types">
+    了解 MiyaIP 的全系列代理类型：静态住宅、轮换住宅等。
+  </Card>
+</CardGroup>

@@ -1,0 +1,115 @@
+---
+title: "在 Android 上使用 Nekobox 设置原生 SOCKS5 代理"
+sidebarTitle: "Android Nekobox"
+description: "在 Android 设备的 Nekobox 中将 MiyaIP 的 SOCKS5 住宅 IP 作为第二跳出口，通过现有海外订阅链接进行路由。"
+---
+
+原生代理模式（原始代理）让你将 MiyaIP 的 SOCKS5 住宅 IP 置于双跳链的**出口节点**位置。在 Nekobox 中，你可以通过将 MiyaIP 的静态 IP 附加为包含现有海外网络的订阅组的 "Landing Proxy" 来实现。结果是，所有出站流量先通过你的海外订阅节点进入，再从 MiyaIP 的住宅 IP 出口，让你在目标网站拥有干净且与位置匹配的身份。
+
+<Warning>
+  原生代理模式要求你的设备上**提前**安装并运行好第一跳的海外网络（VPN 或代理订阅）。如果没有可用的海外第一跳网络，该配置将无法正常工作。
+</Warning>
+
+<Note>
+  如果你尚未安装 Nekobox，请从官方 GitHub 页面下载最新版本：[https://github.com/MatsuriDayo/NekoBoxForAndroid/releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
+</Note>
+
+## 准备工作
+
+在开始之前，请确保你已准备好以下内容：
+
+- Android 设备上已安装 **Nekobox**。
+- **现有的海外代理订阅链接**，这将成为你的第一跳网络。
+- **MiyaIP SOCKS5 凭据**：IP 地址、端口、用户名和密码。请在 MiyaIP 控制台的**静态住宅 → 你的 IP 行**中查看。
+- 设备上的定位服务已**关闭**。
+- 设备的**语言、地区和日期/时间**已更改为目标国家/地区。
+
+## 设置步骤
+
+<Steps>
+  <Step title="手动添加 MiyaIP SOCKS5 节点">
+    打开 Nekobox，点击右上角的 **\+ 图标**。在菜单中选择 **"Manual Input"**，然后将协议选择为 **SOCKS**。填写以下字段：
+
+    1. **Name**：输入一个易于识别的节点名称（例如 `MiyaIP-Static`）。
+    2. **Server / Port**：输入 MiyaIP 控制台中的 IP 地址和端口。
+    3. 点击 **✓ 对勾图标**保存节点。
+  </Step>
+  <Step title="打开 Groups 页面">
+    点击左上角的**三条横线菜单图标**（☰）打开侧边导航，然后点击 **"Groups"**。
+  </Step>
+  <Step title="将你的海外订阅添加为分组">
+    点击 **\+ 图标**创建一个新分组，并填写以下内容：
+
+    1. 输入一个能标识你海外网络的**分组名称**。
+    2. 将分组**类型**更改为 **"Subscription"**。
+    3. 将你的**海外中转网络订阅链接**粘贴到 URL 字段中。
+    4. 点击 **✓** 保存分组。Nekobox 将自动从订阅中获取节点。
+  </Step>
+  <Step title="为分组设置 Landing Proxy">
+    找到你刚创建的分组，点击 **"Edit"**（编辑）。在分组设置中，点击 **"Landing Proxy"**，然后选择你在步骤 1 中添加的 **MiyaIP SOCKS5 节点**。这样，MiyaIP 的住宅 IP 就被指定为该分组所有流量的出口点。
+  </Step>
+  <Step title="打开 Config 并选择网络节点">
+    再次点击左上角的**三条横线菜单图标**（☰），选择 **"Config"**。浏览订阅分组中的节点列表，点击你想用作第一跳的任意海外节点。
+  </Step>
+  <Step title="连接">
+    点击**纸飞机图标**发起连接。然后点击主屏幕顶部的**粉色区域**，以完全激活 VPN 隧道。
+  </Step>
+  <Step title="验证连接">
+    打开浏览器，访问 [whoer.net](https://whoer.net)，确认你显示的 IP 地址是 MiyaIP 的住宅 IP，且显示的位置与你的目标国家/地区一致。
+  </Step>
+</Steps>
+
+原生代理模式（原始代理）让你将 MiyaIP 的 SOCKS5 住宅 IP 置于双跳链的**出口节点**位置。在 Nekobox 中，你可以通过将 MiyaIP 的静态 IP 附加为包含现有海外网络的订阅组的 "Landing Proxy" 来实现。结果是，所有出站流量先通过你的海外订阅节点进入，再从 MiyaIP 的住宅 IP 出口，让你在目标网站拥有干净且与位置匹配的身份。
+
+<Warning>
+  原生代理模式要求你的设备上**提前**安装并运行好第一跳的海外网络（VPN 或代理订阅）。如果没有可用的海外第一跳网络，该配置将无法正常工作。
+</Warning>
+
+<Note>
+  如果你尚未安装 Nekobox，请从官方 GitHub 页面下载最新版本：[https://github.com/MatsuriDayo/NekoBoxForAndroid/releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
+</Note>
+
+## 准备工作
+
+在开始之前，请确保你已准备好以下内容：
+
+- Android 设备上已安装 **Nekobox**。
+- **现有的海外代理订阅链接**，这将成为你的第一跳网络。
+- **MiyaIP SOCKS5 凭据**：IP 地址、端口、用户名和密码。请在 MiyaIP 控制台的**静态住宅 → 你的 IP 行**中查看。
+- 设备上的定位服务已**关闭**。
+- 设备的**语言、地区和日期/时间**已更改为目标国家/地区。
+
+## 设置步骤
+
+<Steps>
+  <Step title="手动添加 MiyaIP SOCKS5 节点">
+    打开 Nekobox，点击右上角的 **\+ 图标**。在菜单中选择 **"Manual Input"**，然后将协议选择为 **SOCKS**。填写以下字段：
+
+    1. **Name**：输入一个易于识别的节点名称（例如 `MiyaIP-Static`）。
+    2. **Server / Port**：输入 MiyaIP 控制台中的 IP 地址和端口。
+    3. 点击 **✓ 对勾图标**保存节点。
+  </Step>
+  <Step title="打开 Groups 页面">
+    点击左上角的**三条横线菜单图标**（☰）打开侧边导航，然后点击 **"Groups"**。
+  </Step>
+  <Step title="将你的海外订阅添加为分组">
+    点击 **\+ 图标**创建一个新分组，并填写以下内容：
+
+    1. 输入一个能标识你海外网络的**分组名称**。
+    2. 将分组**类型**更改为 **"Subscription"**。
+    3. 将你的**海外中转网络订阅链接**粘贴到 URL 字段中。
+    4. 点击 **✓** 保存分组。Nekobox 将自动从订阅中获取节点。
+  </Step>
+  <Step title="为分组设置 Landing Proxy">
+    找到你刚创建的分组，点击 **"Edit"**（编辑）。在分组设置中，点击 **"Landing Proxy"**，然后选择你在步骤 1 中添加的 **MiyaIP SOCKS5 节点**。这样，MiyaIP 的住宅 IP 就被指定为该分组所有流量的出口点。
+  </Step>
+  <Step title="打开 Config 并选择网络节点">
+    再次点击左上角的**三条横线菜单图标**（☰），选择 **"Config"**。浏览订阅分组中的节点列表，点击你想用作第一跳的任意海外节点。
+  </Step>
+  <Step title="连接">
+    点击**纸飞机图标**发起连接。然后点击主屏幕顶部的**粉色区域**，以完全激活 VPN 隧道。
+  </Step>
+  <Step title="验证连接">
+    打开浏览器，访问 [whoer.net](https://whoer.net)，确认你显示的 IP 地址是 MiyaIP 的住宅 IP，且显示的位置与你的目标国家/地区一致。
+  </Step>
+</Steps>

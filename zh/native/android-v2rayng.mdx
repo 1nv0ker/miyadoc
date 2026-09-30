@@ -1,0 +1,64 @@
+---
+title: "在 Android 上使用 V2rayNG 设置原生 SOCKS5 代理"
+sidebarTitle: "Android V2rayNG"
+description: "在 Android 设备上配置 V2rayNG，通过你的海外代理路由并以 MiyaIP 的静态 SOCKS5 住宅 IP 作为出口，实现双跳连接。"
+---
+
+V2rayNG 中的原生代理模式（原始代理）通过将你现有的海外节点配置为订阅分组的**前置代理（pre-proxy）**，然后在分组内添加 MiyaIP 的 SOCKS5 静态 IP 作为出站节点来实现。流量路径为：你的设备 → 海外前置代理节点 → MiyaIP 住宅 IP → 目标网站，因此网站看到的仅为干净的住宅 IP。以下步骤将带领你完成完整配置。
+
+<Warning>
+  原生代理模式要求你**提前**在 V2rayNG 中导入并准备好可用的海外节点作为第一跳。如果没有可用的海外第一跳网络，该配置将无法正常工作。
+</Warning>
+
+<Note>
+  如果你尚未安装 V2rayNG，请从官方 GitHub 页面下载最新版本：[https://github.com/2dust/v2rayNG/releases](https://github.com/2dust/v2rayNG/releases)
+</Note>
+
+## 准备工作
+
+在开始之前，请确保你已准备好以下内容：
+
+- Android 设备上已安装 **V2rayNG**。
+- **现有的海外代理节点**已导入 V2rayNG，这将作为你的第一跳（前置代理）。
+- **MiyaIP SOCKS5 凭据**：IP 地址、端口、用户名和密码。请在 MiyaIP 控制台的**静态住宅 → 你的 IP 行**中查看。
+- 设备上的定位服务已**关闭**。
+- 设备的**语言、地区和日期/时间**已更改为目标国家/地区。
+
+## 设置步骤
+
+<Steps>
+  <Step title="导入并重命名你的海外节点">
+    在 V2rayNG 中，如果你尚未导入现有的海外环境节点，请先完成导入。导入后，**将其重命名**为一个清晰且唯一的名称（例如 `Overseas-HK-01`）。
+
+    <Tip>
+      海外节点名称在 V2rayNG 中必须唯一，才能被选为前置代理。如果存在同名节点，请现在重命名其中一个，以避免后续冲突。
+    </Tip>
+  </Step>
+  <Step title="打开订阅分组设置">
+    点击左上角的**三条横线菜单图标**（☰），然后在菜单中选择 **"Subscription Group Settings"（订阅分组设置）**。
+  </Step>
+  <Step title="创建带有前置代理的新订阅分组">
+    点击 **\+ 图标**添加一个新的订阅分组，并填写以下内容：
+
+    1. 输入一个**分组名称**（例如 `MiyaIP Native`）。
+    2. 将 **"Pre-proxy"（前置代理）** 设置为你在步骤 1 中重命名的海外节点。
+    3. 点击 **✓** 保存分组。
+  </Step>
+  <Step title="将 MiyaIP SOCKS5 节点添加到分组">
+    点击 **\+** → **"Manual Input"**，然后将协议选择为 **SOCKS5**。填写所有必填字段：
+
+    - **Note / Alias**：节点标签（例如 `MiyaIP-Static-US`）。
+    - **Server**：MiyaIP 控制台中的 IP 地址。
+    - **Port**：MiyaIP 控制台中的端口号。
+    - **Username**：你的 MiyaIP SOCKS5 用户名。
+    - **Password**：你的 MiyaIP SOCKS5 密码。
+
+    点击 **✓** 保存节点，并确保它被分配到你在步骤 3 中创建的订阅分组。
+  </Step>
+  <Step title="连接并测试">
+    从节点列表中选择 **MiyaIP 静态 IP 节点**，然后点击**启动按钮**（V2rayNG 图标）以激活连接。连接成功后，点击主页面的**空白区域**运行连通性测试，确认节点可以正常访问。
+  </Step>
+  <Step title="验证连接">
+    打开浏览器，访问 [whoer.net](https://whoer.net)，确认你显示的 IP 地址与 MiyaIP 的住宅 IP 一致，且位置信息反映预期的目标国家/地区。
+  </Step>
+</Steps>

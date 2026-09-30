@@ -9,71 +9,150 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "指南",
-        "groups": [
+        "language": "zh",
+        "default": true,
+        "tabs": [
           {
-            "group": "关于",
-            "pages": [
-              "introduction",
-              "proxy-types",
-              "device-preparation"
-            ]
-          },
-          {
-            "group": "中转代理",
-            "pages": [
+            "tab": "指南",
+            "groups": [
               {
-                "group": "iOS",
+                "group": "关于",
                 "pages": [
-                  "relay/ios-shadowrocket"
+                  "zh/introduction",
+                  "zh/proxy-types",
+                  "zh/device-preparation"
                 ]
               },
               {
-                "group": "Android",
+                "group": "中转代理",
                 "pages": [
-                  "relay/android-nekobox",
-                  "relay/android-v2rayng"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "原始代理",
-            "pages": [
-              {
-                "group": "iOS",
-                "pages": [
-                  "native/ios-shadowrocket"
+                  {
+                    "group": "iOS",
+                    "pages": [
+                      "zh/relay/ios-shadowrocket"
+                    ]
+                  },
+                  {
+                    "group": "Android",
+                    "pages": [
+                      "zh/relay/android-nekobox",
+                      "zh/relay/android-v2rayng"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "Android",
+                "group": "原始代理",
                 "pages": [
-                  "native/android-nekobox",
-                  "native/android-v2rayng"
+                  {
+                    "group": "iOS",
+                    "pages": [
+                      "zh/native/ios-shadowrocket"
+                    ]
+                  },
+                  {
+                    "group": "Android",
+                    "pages": [
+                      "zh/native/android-nekobox",
+                      "zh/native/android-v2rayng"
+                    ]
+                  }
                 ]
-              }
-            ]
-          },
-          {
-            "group": "集成",
-            "pages": [
+              },
               {
-                "group": "指纹浏览器",
+                "group": "集成",
                 "pages": [
-                  "integrations/adspower-overview",
-                  "integrations/adspower-static-proxy"
+                  {
+                    "group": "指纹浏览器",
+                    "pages": [
+                      "zh/integrations/adspower-overview",
+                      "zh/integrations/adspower-static-proxy"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "账户与仪表板",
+                "pages": [
+                  "zh/dashboard/manage-proxies",
+                  "zh/dashboard/orders-billing"
                 ]
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "tabs": [
           {
-            "group": "账户与仪表板",
-            "pages": [
-              "dashboard/manage-proxies",
-              "dashboard/orders-billing"
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "About",
+                "pages": [
+                  "introduction",
+                  "proxy-types",
+                  "device-preparation"
+                ]
+              },
+              {
+                "group": "Relay Proxy",
+                "pages": [
+                  {
+                    "group": "iOS",
+                    "pages": [
+                      "relay/ios-shadowrocket"
+                    ]
+                  },
+                  {
+                    "group": "Android",
+                    "pages": [
+                      "relay/android-nekobox",
+                      "relay/android-v2rayng"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Native Proxy",
+                "pages": [
+                  {
+                    "group": "iOS",
+                    "pages": [
+                      "native/ios-shadowrocket"
+                    ]
+                  },
+                  {
+                    "group": "Android",
+                    "pages": [
+                      "native/android-nekobox",
+                      "native/android-v2rayng"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Integrations",
+                "pages": [
+                  {
+                    "group": "Antidetect Browsers",
+                    "pages": [
+                      "integrations/adspower-overview",
+                      "integrations/adspower-static-proxy"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Account & Dashboard",
+                "pages": [
+                  "dashboard/manage-proxies",
+                  "dashboard/orders-billing"
+                ]
+              }
             ]
           }
         ]

@@ -1,0 +1,47 @@
+---
+title: "在 iPhone 上使用 Shadowrocket 设置原生 SOCKS5 代理"
+sidebarTitle: "iOS Shadowrocket"
+description: "通过 Shadowrocket 在 iPhone 上将 MiyaIP 的 SOCKS5 住宅 IP 串联为第二跳代理，需要设备上已有可用的海外 VPN。"
+---
+
+原生代理模式（原始代理）让你在现有的海外 VPN 或代理网络之上，将 MiyaIP 的 SOCKS5 住宅 IP 串联为**第二跳**。流量不会直接从你的设备发往住宅 IP，而是先经过第一跳的海外连接作为入口隧道，再由 MiyaIP 的静态住宅 IP 作为干净的出口节点被网站识别。本指南将带领你在 iPhone 上的 Shadowrocket 中完成这一双层代理链的配置。
+
+<Warning>
+  该模式要求你的设备上**提前**安装并运行好第一层的海外网络（VPN 或代理）。如果没有可用的海外第一跳网络，原生代理模式将无法正常工作。
+</Warning>
+
+## 准备工作
+
+在开始之前，请确保你已准备好以下内容：
+
+- iPhone 上已安装 **Shadowrocket**（可在 App Store 下载）。
+- 设备上已配置并启用的**现有海外 VPN 或代理**，这将成为你的第一跳。
+- **MiyaIP SOCKS5 凭据**：IP 地址、端口、用户名和密码。请在 MiyaIP 控制台的**静态住宅 → 你的 IP 行**中查看。
+- 设备上的定位服务已**关闭**。
+- iPhone 的**语言、地区和日期/时间**已更改为目标国家/地区。
+
+## 设置步骤
+
+<Steps>
+  <Step title="导入 MiyaIP SOCKS5 节点">
+    打开 Shadowrocket，点击左上角的**二维码扫描图标**，扫描 MiyaIP 控制台中提供的 SOCKS5 节点二维码。系统会自动将静态住宅 IP 节点导入 Shadowrocket。
+  </Step>
+  <Step title="打开节点设置">
+    在服务器列表中找到刚导入的 MiyaIP 节点，点击节点行右侧的**感叹号（!）**，打开详细设置页面。
+  </Step>
+  <Step title="进入 Proxy Via 设置">
+    在节点设置页面中向下滚动，点击 **"Proxy Via"（代理通过）**。该选项告诉 Shadowrocket，将此节点的连接通过另一个代理（即你现有的海外网络）进行路由。
+  </Step>
+  <Step title="选择你的海外网络作为第一跳">
+    在可用代理列表中，选择你的**自有海外 VPN 或代理**作为代理穿透（Proxy Via）。这表示它将作为 MiyaIP 的 SOCKS5 节点所经过的第一跳。
+  </Step>
+  <Step title="确认设置并保存">
+    返回节点设置页面，确认协议已设置为 **SOCKS5**，且所有代理详情（IP、端口、用户名、密码）均正确无误。点击**保存**以应用更改。
+  </Step>
+  <Step title="使用静态 IP 节点连接">
+    回到 Shadowrocket 主页，将 MiyaIP 静态 IP 设为**当前活动节点**。**全局路由**设置为**代理**，然后点击屏幕顶部的**火箭按钮**开始连接。
+  </Step>
+  <Step title="验证连接">
+    打开浏览器，访问 [whoer.net](https://whoer.net)，确认你显示的 IP 地址与 MiyaIP 的住宅 IP 一致，且位置信息反映目标国家/地区。
+  </Step>
+</Steps>

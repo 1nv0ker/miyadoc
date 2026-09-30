@@ -1,0 +1,117 @@
+---
+title: "通过 Nekobox 在 Android 上连接 MiyaIP 中转代理"
+sidebarTitle: "Android Nekobox"
+description: "在Android上使用Nekobox配置MiyaIP中转代理：下载应用，扫描仪表盘中的二维码，并在whoer.net验证你的IP。"
+---
+
+MiyaIP 的中转代理模式让你无需现有海外 VPN，即可将 Android 流量路由到住宅 IP。Nekobox 是一款免费开源的代理客户端，只需扫描二维码即可导入你的 MiyaIP 配置，无需手动设置。
+
+<Warning>
+  中转代理模式不能与其他 VPN 或代理工具同时运行。连接前请关闭并禁用设备上所有正在运行的 VPN 应用，以避免冲突和连接失败。
+</Warning>
+
+<Note>
+  直接从官方 GitHub releases 页面下载最新版 Nekobox APK：[https://github.com/MatsuriDayo/NekoBoxForAndroid/releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)。下载完成后安装 APK，你可能需要在 Android 安全设置中允许安装未知来源的应用。
+</Note>
+
+## 连接前的准备
+
+为确保目标网站看到正确的区域和位置信息，请在启动 Nekobox 前按以下步骤调整 Android 设备设置：
+
+1. **关闭定位服务**：进入 **设置 → 位置**，将其关闭。
+2. **更改语言和地区**：进入 **设置 → 常规管理 → 语言和输入法**，将语言和地区设为目标国家。
+3. **更改时区**：进入 **设置 → 常规管理 → 日期和时间**，关闭自动时区，然后选择与你目标国家对应的时区。
+
+## 查找你的二维码
+
+登录 MiyaIP 仪表盘并进入 **静态住宅**。找到你已购买 IP 所在的行，点击该行中的 **二维码图标**。弹出窗口中将显示三个标签页：**Shadowrocket**、**Nekobox** 和 **V2ray**，选择 **Nekobox** 标签页以显示对应的二维码。
+
+## 使用 Nekobox 连接
+
+<Steps>
+  <Step title="打开 Nekobox 并点击添加按钮">
+    在 Android 设备上启动 Nekobox。从首页点击右上角的 **\+** 按钮，打开节点导入菜单。
+  </Step>
+  <Step title="选择扫描二维码">
+    在导入选项中选择 **扫描二维码**，打开相机扫描器。
+  </Step>
+  <Step title="扫描 Nekobox 二维码">
+    将相机对准 MiyaIP 仪表盘中显示的 **Nekobox 二维码**。Nekobox 会自动识别该二维码并将代理节点保存到你的节点列表。
+  </Step>
+  <Step title="选择已导入的节点">
+    返回 Nekobox 首页，点击刚添加的节点以选中它。节点旁会显示勾选标记或高亮，表示该节点已被激活。
+  </Step>
+  <Step title="连接代理">
+    点击屏幕底部的 **纸飞机按钮** 以启动代理连接。Android 会提示允许 VPN 配置，点击 **确定** 并根据需要进行身份验证。
+  </Step>
+  <Step title="测试延迟">
+    点击节点旁边的 **粉色区域** 运行延迟测试。如果测试成功，表示 Nekobox 已通过你的 MiyaIP 住宅 IP 建立连接。
+  </Step>
+  <Step title="验证你的 IP 地址">
+    打开浏览器并访问 **whoer.net**，确认你的 IP 地址和位置信息与你在 MiyaIP 中配置的住宅 IP 一致。
+  </Step>
+</Steps>
+
+<Warning>
+  如果连接失败或延迟测试超时，请再次点击纸飞机按钮关闭代理，等待几秒后再点击以重新连接。如果持续失败，可能是节点临时故障，尝试重新扫描二维码或在 MiyaIP 仪表盘中刷新会话。
+</Warning>
+
+<Note>
+  在 whoer.net 上，检查显示的 IP 是否与你配置的 MiyaIP 住宅 IP 匹配，并确认国家和匿名度评分是否符合预期。如果 IP 仍显示你的真实位置，请确保定位服务已完全关闭且没有其他 VPN 正在运行。
+</Note>
+
+MiyaIP 的中转代理模式让你无需现有海外 VPN，即可将 Android 流量路由到住宅 IP。Nekobox 是一款免费开源的代理客户端，只需扫描二维码即可导入你的 MiyaIP 配置，无需手动设置。
+
+<Warning>
+  中转代理模式不能与其他 VPN 或代理工具同时运行。连接前请关闭并禁用设备上所有正在运行的 VPN 应用，以避免冲突和连接失败。
+</Warning>
+
+<Note>
+  直接从官方 GitHub releases 页面下载最新版 Nekobox APK：[https://github.com/MatsuriDayo/NekoBoxForAndroid/releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)。下载完成后安装 APK，你可能需要在 Android 安全设置中允许安装未知来源的应用。
+</Note>
+
+## 连接前的准备
+
+为确保目标网站看到正确的区域和位置信息，请在启动 Nekobox 前按以下步骤调整 Android 设备设置：
+
+1. **关闭定位服务**：进入 **设置 → 位置**，将其关闭。
+2. **更改语言和地区**：进入 **设置 → 常规管理 → 语言和输入法**，将语言和地区设为目标国家。
+3. **更改时区**：进入 **设置 → 常规管理 → 日期和时间**，关闭自动时区，然后选择与你目标国家对应的时区。
+
+## 查找你的二维码
+
+登录 MiyaIP 仪表盘并进入 **静态住宅**。找到你已购买 IP 所在的行，点击该行中的 **二维码图标**。弹出窗口中将显示三个标签页：**Shadowrocket**、**Nekobox** 和 **V2ray**，选择 **Nekobox** 标签页以显示对应的二维码。
+
+## 使用 Nekobox 连接
+
+<Steps>
+  <Step title="打开 Nekobox 并点击添加按钮">
+    在 Android 设备上启动 Nekobox。从首页点击右上角的 **\+** 按钮，打开节点导入菜单。
+  </Step>
+  <Step title="选择扫描二维码">
+    在导入选项中选择 **扫描二维码**，打开相机扫描器。
+  </Step>
+  <Step title="扫描 Nekobox 二维码">
+    将相机对准 MiyaIP 仪表盘中显示的 **Nekobox 二维码**。Nekobox 会自动识别该二维码并将代理节点保存到你的节点列表。
+  </Step>
+  <Step title="选择已导入的节点">
+    返回 Nekobox 首页，点击刚添加的节点以选中它。节点旁会显示勾选标记或高亮，表示该节点已被激活。
+  </Step>
+  <Step title="连接代理">
+    点击屏幕底部的 **纸飞机按钮** 以启动代理连接。Android 会提示允许 VPN 配置，点击 **确定** 并根据需要进行身份验证。
+  </Step>
+  <Step title="测试延迟">
+    点击节点旁边的 **粉色区域** 运行延迟测试。如果测试成功，表示 Nekobox 已通过你的 MiyaIP 住宅 IP 建立连接。
+  </Step>
+  <Step title="验证你的 IP 地址">
+    打开浏览器并访问 **whoer.net**，确认你的 IP 地址和位置信息与你在 MiyaIP 中配置的住宅 IP 一致。
+  </Step>
+</Steps>
+
+<Warning>
+  如果连接失败或延迟测试超时，请再次点击纸飞机按钮关闭代理，等待几秒后再点击以重新连接。如果持续失败，可能是节点临时故障，尝试重新扫描二维码或在 MiyaIP 仪表盘中刷新会话。
+</Warning>
+
+<Note>
+  在 whoer.net 上，检查显示的 IP 是否与你配置的 MiyaIP 住宅 IP 匹配，并确认国家和匿名度评分是否符合预期。如果 IP 仍显示你的真实位置，请确保定位服务已完全关闭且没有其他 VPN 正在运行。
+</Note>
