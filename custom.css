@@ -1,0 +1,17 @@
+/* Give the logo enough space to remain legible within the 64px navbar. */
+#navbar img.nav-logo {
+  height: 3.5rem !important;
+  width: auto !important;
+}
+
+/* Remove the generated sign-out control from desktop and mobile navigation. */
+#navbar .logout-link,
+#mobile-nav .logout-link {
+  display: none !important;
+}
+
+@media (max-width: 1023px) {
+  #navbar img.nav-logo {
+    height: 2.75rem !important;
+  }
+}
