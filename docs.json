@@ -11,10 +11,10 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Getting Started",
+        "tab": "指南",
         "groups": [
           {
-            "group": "Overview",
+            "group": "关于",
             "pages": [
               "introduction",
               "proxy-types",
@@ -22,35 +22,55 @@
             ]
           },
           {
-            "group": "Relay Proxy Setup",
+            "group": "中转代理",
             "pages": [
-              "relay/ios-shadowrocket",
-              "relay/android-nekobox",
-              "relay/android-v2rayng"
+              {
+                "group": "iOS",
+                "pages": [
+                  "relay/ios-shadowrocket"
+                ]
+              },
+              {
+                "group": "Android",
+                "pages": [
+                  "relay/android-nekobox",
+                  "relay/android-v2rayng"
+                ]
+              }
             ]
           },
           {
-            "group": "Native Proxy Setup",
+            "group": "原始代理",
             "pages": [
-              "native/ios-shadowrocket",
-              "native/android-nekobox",
-              "native/android-v2rayng"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Integrations",
-        "groups": [
-          {
-            "group": "Browser Tools",
-            "pages": [
-              "integrations/adspower-overview",
-              "integrations/adspower-static-proxy"
+              {
+                "group": "iOS",
+                "pages": [
+                  "native/ios-shadowrocket"
+                ]
+              },
+              {
+                "group": "Android",
+                "pages": [
+                  "native/android-nekobox",
+                  "native/android-v2rayng"
+                ]
+              }
             ]
           },
           {
-            "group": "Dashboard Guide",
+            "group": "集成",
+            "pages": [
+              {
+                "group": "指纹浏览器",
+                "pages": [
+                  "integrations/adspower-overview",
+                  "integrations/adspower-static-proxy"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "账户与仪表板",
             "pages": [
               "dashboard/manage-proxies",
               "dashboard/orders-billing"
@@ -66,5 +86,9 @@
       "label": "Dashboard",
       "href": "https://miyaip.com"
     }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   }
 }
