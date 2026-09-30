@@ -6,8 +6,12 @@ description: "Configure V2rayNG on Android to route through your overseas proxy 
 
 Native Proxy mode (原始代理) in V2rayNG works by configuring your existing overseas node as a **pre-proxy** for a subscription group, and then adding MiyaIP's SOCKS5 static IP as the outbound node within that group. Traffic flows from your device → overseas pre-proxy node → MiyaIP residential IP → destination, so the website sees only the clean residential IP. The steps below walk you through the full configuration.
 
+<Warning>
+  Native Proxy mode requires an active first-hop overseas node already imported and available in V2rayNG **before** you begin. If you do not have an overseas first-hop network, this setup will not work correctly.
+</Warning>
+
 <Note>
-  If you have not installed V2rayNG yet, download the latest release from: [https://github.com/Kejifaxian/welcome/releases/tag](https://github.com/Kejifaxian/welcome/releases/tag)
+  If you have not installed V2rayNG yet, download the latest release from the official GitHub page: [https://github.com/2dust/v2rayNG/releases](https://github.com/2dust/v2rayNG/releases)
 </Note>
 
 ## Prerequisites

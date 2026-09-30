@@ -1,10 +1,14 @@
 ---
 title: "Set Up Native SOCKS5 Proxy on Android with Nekobox"
 sidebarTitle: "Android Nekobox"
-description: "Use MiyaIP's SOCKS5 IP as a second-layer proxy in Nekobox on Android — chain it through your existing overseas subscription for a clean residential exit node."
+description: "Chain MiyaIP's SOCKS5 residential IP as a second-hop exit in Nekobox on Android, routing through your existing overseas subscription link."
 ---
 
 Native Proxy mode (原始代理) lets you place MiyaIP's SOCKS5 residential IP as the **exit node** of a two-hop chain. In Nekobox, you accomplish this by attaching MiyaIP's static IP as the "Landing Proxy" for a subscription group that contains your existing overseas network. The result is that all outbound traffic enters through your overseas subscription node and exits from MiyaIP's residential IP — giving you a clean, location-matched identity at the destination.
+
+<Warning>
+  Native Proxy mode requires an active first-hop overseas network (VPN or proxy subscription) already installed and running on your device **before** you begin. If you do not have an overseas first-hop network, this setup will not work correctly.
+</Warning>
 
 <Note>
   If you have not installed Nekobox yet, download the latest release from the official GitHub page: [https://github.com/MatsuriDayo/NekoBoxForAndroid/releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)

@@ -1,15 +1,27 @@
 ---
-title: "Set Up Relay Proxy on Android with V2rayNG"
+title: "Connect to MiyaIP Relay Proxy on Android via V2rayNG"
 sidebarTitle: "Android V2rayNG"
-description: "Connect to MiyaIP's relay proxy on Android using V2rayNG — import the QR code from the dashboard and test your connection in a few taps."
+description: "Set up MiyaIP's relay proxy on Android with V2rayNG — scan the QR code from your dashboard and start routing traffic through a residential IP."
 ---
 
 MiyaIP's relay proxy mode lets you route your Android traffic through a residential IP by importing a simple QR code into V2rayNG. V2rayNG is a lightweight, open-source proxy client that supports the V2ray protocol used by MiyaIP's relay infrastructure.
 
+<Warning>
+  Relay proxy mode is incompatible with other VPN or proxy tools running simultaneously. Before connecting, close and disable any other VPN apps active on your device to avoid conflicts and connection failures.
+</Warning>
+
 <Note>
   Download the latest V2rayNG APK from the releases page:
-  [https://github.com/Kejifaxian/welcome/releases/tag](https://github.com/Kejifaxian/welcome/releases/tag). Note that this download link is intended for users who already have overseas internet access. Install the APK after downloading — you may need to allow installation from unknown sources in your Android security settings.
+  [https://github.com/Kejifaxian/welcome/releases/tag](https://github.com/Kejifaxian/welcome/releases/tag). Note that this download link requires existing overseas internet access to reach. Install the APK after downloading — you may need to allow installation from unknown sources in your Android security settings.
 </Note>
+
+## Before You Connect
+
+To ensure your target website sees the correct locale and location metadata, adjust the following settings on your Android device before launching V2rayNG:
+
+1. **Disable Location Services** — go to **Settings → Location** and turn it off.
+2. **Change language and region** — go to **Settings → General Management → Language and Input** and set the language and region to your target country.
+3. **Change date and time timezone** — go to **Settings → General Management → Date and Time**, disable automatic timezone, and select the timezone that matches your target country.
 
 ## Find Your QR Code
 
