@@ -1,110 +1,54 @@
 ---
-title: "Prepare Your Device Before Activating a MiyaIP Proxy"
-sidebarTitle: "Device Preparation"
-description: "Disable location services and set your device language, region, and timezone before activating a MiyaIP proxy to avoid detection and match your IP region."
+title: "Prepare your device before configuring a proxy"
+sidebarTitle: "Device preparation"
+description: "Disable location services and adjust your phone's language, region, date, and time to the target country before configuring MiyaIP."
 ---
 
-Before you activate any MiyaIP proxy, it is important to align your device's system settings with the target country of your proxy IP. Apps and websites do not rely solely on your IP address to determine your location — they also read your device's GPS coordinates, system language, regional format settings, and timezone. If these signals conflict with your proxy IP's region, you risk triggering fraud detection, being served the wrong regional content, or having your account flagged. Taking a few minutes to prepare your device correctly makes a significant difference in proxy effectiveness.
+Before configuring a phone proxy, disable location services and adjust the device's language, region, date, and time to the target country of your proxy IP. Follow these requirements for both relay and native proxies.
+
+<Tabs>
+  <Tab title="iOS">
+    <Steps>
+      <Step title="Disable location services">
+        Open **Settings**, find **Location Services** under **Privacy**, and turn location services off.
+
+        <Frame>
+          <img src="/images/tutorials/m_ios_sr_1.png" alt="Turn off location services in iOS settings" style={{ width: "100%", maxWidth: "480px" }} />
+        </Frame>
+      </Step>
+      <Step title="Adjust the date, time, language, and region">
+        Under **General**, set the phone's date, time, and time zone to match your target country. Choose a language other than Simplified Chinese, preferably the target country's language. Set the region to your target country.
+
+        <Frame>
+          <img src="/images/tutorials/m_ios_sr_2.png" alt="Adjust the iOS date, time, language, and region" style={{ width: "100%", maxWidth: "480px" }} />
+        </Frame>
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Android">
+    <Steps>
+      <Step title="Adjust the date, time, language, and region">
+        In your phone settings, set the date, time, and time zone to match your target country. Choose a language other than Simplified Chinese, preferably the target country's language. Set the region to your target country.
+
+        <Frame>
+          <img src="/images/tutorials/m_and_nb_1.png" alt="Adjust the Android date, time, language, and region" style={{ width: "100%", maxWidth: "480px" }} />
+        </Frame>
+      </Step>
+      <Step title="Disable location services">
+        Find **Location** in your phone settings and turn location services off.
+
+        <Frame>
+          <img src="/images/tutorials/m_and_nb_2.png" alt="Turn off location services in Android settings" style={{ width: "100%", maxWidth: "480px" }} />
+        </Frame>
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Continue setup
+
+After preparing your device, return to the [tutorial guide](/introduction) and choose your proxy mode and client. Once connected, visit [whoer.net](https://whoer.net) in your browser and check that the exit IP matches your expectations.
 
 <Note>
-  These steps apply to both **Relay Proxy** and **Native Proxy** modes. Complete this preparation before configuring your proxy client app.
+  For a native proxy, you also need a working overseas network connection and a MiyaIP SOCKS5 node. See [proxy modes](/proxy-types) for the prerequisites.
 </Note>
-
-## Preparation Steps
-
-<Steps>
-  <Step title="Disable Location Services">
-    GPS location data is one of the strongest signals apps use to verify your true whereabouts. Disabling location services prevents apps from reading your physical coordinates and comparing them against your proxy IP's region.
-
-    <Tabs>
-      <Tab title="iOS">
-        1. Open **Settings**
-        2. Tap **Privacy & Security**
-        3. Tap **Location Services**
-        4. Toggle **Location Services** to **Off**
-      </Tab>
-      <Tab title="Android">
-        1. Open **Settings**
-        2. Tap **Location** (may appear under **Privacy** on some devices)
-        3. Toggle **Use Location** to **Off**
-      </Tab>
-    </Tabs>
-  </Step>
-
-  <Step title="Set Language & Region to Match Your Target Country">
-    Your device's system language and region format (currency, date format, measurement units) are readable by apps and browsers. Set these to match the country of your proxy IP to present a consistent identity.
-
-    <Tabs>
-      <Tab title="iOS">
-        1. Open **Settings**
-        2. Tap **General**
-        3. Tap **Language & Region**
-        4. Under **iPhone Language**, select the language of your target country
-        5. Under **Region**, select the corresponding country
-        6. Confirm the change when prompted — your device will restart its interface
-      </Tab>
-      <Tab title="Android">
-        1. Open **Settings**
-        2. Tap **General Management** (Samsung) or **System** (stock Android)
-        3. Tap **Language**
-        4. Tap **Add Language** and select the language of your target country
-        5. Drag it to the top of the list to set it as the primary language
-        6. Confirm the change when prompted
-      </Tab>
-    </Tabs>
-  </Step>
-
-  <Step title="Set Date & Time to the Target Country's Timezone">
-    An incorrect timezone is a subtle but detectable inconsistency — your IP may resolve to the United States while your device clock is in UTC+8. Set your timezone to match your proxy IP's region.
-
-    <Tabs>
-      <Tab title="iOS">
-        1. Open **Settings**
-        2. Tap **General**
-        3. Tap **Date & Time**
-        4. Disable **Set Automatically** if it is on
-        5. Tap **Time Zone** and search for a city in your target country
-      </Tab>
-      <Tab title="Android">
-        1. Open **Settings**
-        2. Tap **General Management** (Samsung) or **System** (stock Android)
-        3. Tap **Date and Time**
-        4. Disable **Automatic Time Zone** if it is on
-        5. Tap **Select Time Zone** and choose the timezone corresponding to your target country
-      </Tab>
-    </Tabs>
-  </Step>
-</Steps>
-
-## After Changing Settings
-
-If your device prompts you to restart after applying language or region changes, restart it before proceeding. This ensures all system-level changes take effect and are visible to all apps — not just the home screen.
-
-<Warning>
-  Do **not** use Simplified Chinese as your device language when accessing target-region services. Always set your device language to the target country's language (for example, English for US proxies, Japanese for Japan proxies). Mismatched language settings are a common cause of region detection failures.
-</Warning>
-
-## Verify Your Connection
-
-After completing device preparation and activating your MiyaIP proxy in your client app, confirm that everything is working correctly before using your target service.
-
-<Steps>
-  <Step title="Open your device's browser">
-    Use Safari (iOS) or Chrome (Android) — do not use a third-party browser that may have its own proxy or VPN settings that could interfere.
-  </Step>
-  <Step title="Navigate to whoer.net">
-    Go to **[whoer.net](https://whoer.net)** in your browser. This tool displays your current IP address, detected country, language, timezone, and other browser fingerprint signals.
-  </Step>
-  <Step title="Check the results">
-    Confirm that the following match your target country:
-    - **IP address** — should resolve to the correct country and region
-    - **Timezone** — should match the timezone you set in Step 3
-    - **Language** — should reflect the language you set in Step 2
-
-    If any of these values are incorrect, double-check your proxy configuration in your client app and ensure all device preparation steps were completed.
-  </Step>
-</Steps>
-
-<Tip>
-  For a deeper fingerprint check — especially if you are using AdsPower or another anti-detect browser — also visit **[browserleaks.com](https://browserleaks.com)** to inspect WebRTC leaks, canvas fingerprint, and timezone consistency.
-</Tip>

@@ -1,68 +1,54 @@
 ---
-title: "MiyaIP: Residential Proxy Service — Getting Started"
-sidebarTitle: "Introduction"
-description: "MiyaIP offers static and dynamic residential proxy IPs for iOS, Android, and desktop — connect in minutes with Shadowrocket, Nekobox, or V2rayNG."
+title: "MiyaIP tutorial guide"
+sidebarTitle: "Tutorials"
+description: "Choose a relay or native proxy tutorial to configure MiyaIP on iOS, Android, or AdsPower."
 ---
 
-MiyaIP is a residential proxy service that provides real, verified residential IP addresses sourced from locations all over the world. Whether you need a stable long-term identity for account management, a rotating IP pool for data collection, or a dedicated IP optimized for social media live streaming, MiyaIP gives you flexible options that fit your workflow — all accessible from your mobile device or desktop in minutes.
-
-## How MiyaIP Works
-
-MiyaIP supports two distinct usage modes depending on whether you already have access to an overseas network.
+Choose a tutorial for your proxy mode and client. Complete device preparation before configuring a phone. For a native proxy, you also need your own overseas network connection.
 
 <CardGroup cols={2}>
-  <Card title="Relay Proxy (中转代理)" icon="tower-broadcast">
-    MiyaIP provides the entire transit relay chain. You do **not** need your own overseas VPN or proxy environment. Simply configure the provided server address and credentials in your client app, and MiyaIP handles the routing from your device to the residential IP exit node.
+  <Card title="Choose a proxy mode" icon="layer-group" href="/proxy-types">
+    Review the prerequisites for relay and native proxies.
   </Card>
-  <Card title="Native Proxy (原始代理)" icon="network-wired">
-    You supply your own first-hop overseas network connection (e.g., an existing VPN or proxy). MiyaIP then provides a SOCKS5 residential IP as the **second hop**, layering a genuine residential identity on top of your existing connection for maximum authenticity.
+  <Card title="Device preparation" icon="mobile-screen-button" href="/device-preparation">
+    Disable phone location services and adjust the language, region, date, and time.
   </Card>
 </CardGroup>
 
-## Supported Client Apps
-
-MiyaIP is compatible with the most widely used proxy client applications across iOS and Android. Each app supports importing your proxy configuration via QR code, subscription link, or manual entry.
+## Relay proxy tutorials
 
 <CardGroup cols={3}>
-  <Card title="Shadowrocket" icon="apple" href="/relay/ios-shadowrocket">
-    The recommended client for **iOS** users. Supports SOCKS5 and HTTP proxies with a clean, reliable interface.
+  <Card title="iOS · Shadowrocket" icon="apple" href="/relay/ios-shadowrocket">
+    Scan the relay proxy QR code, connect, and check your exit IP.
   </Card>
-  <Card title="Nekobox" icon="robot" href="/relay/android-nekobox">
-    A powerful and flexible proxy client for **Android**, supporting a wide range of protocols including SOCKS5.
+  <Card title="Android · NekoBox" icon="android" href="/relay/android-nekobox">
+    Scan the NekoBox QR code, select the node, and connect.
   </Card>
-  <Card title="V2rayNG" icon="android" href="/relay/android-v2rayng">
-    A popular **Android** client with broad protocol support — ideal for users already familiar with the V2Ray ecosystem.
+  <Card title="Android · v2rayNG" icon="android" href="/relay/android-v2rayng">
+    Scan the v2rayNG QR code, start the proxy, and check your exit IP.
+  </Card>
+</CardGroup>
+
+## Native proxy tutorials
+
+<Note>
+  These tutorials require your own working overseas network connection and a MiyaIP static residential native proxy SOCKS5 node.
+</Note>
+
+<CardGroup cols={3}>
+  <Card title="iOS · Shadowrocket" icon="apple" href="/native/ios-shadowrocket">
+    Set **Proxy through** to your own overseas connection for the native proxy.
+  </Card>
+  <Card title="Android · NekoBox" icon="android" href="/native/android-nekobox">
+    Add a SOCKS5 node and set it as the overseas network group's **Landing proxy**.
+  </Card>
+  <Card title="Android · v2rayNG" icon="android" href="/native/android-v2rayng">
+    Set your overseas node as the **Pre-proxy**, then add the MiyaIP SOCKS5 node.
   </Card>
 </CardGroup>
 
-## AdsPower Integration
+## AdsPower tutorial
 
-MiyaIP integrates seamlessly with **AdsPower**, the leading anti-detect browser for multi-account management. By assigning a unique MiyaIP residential IP to each browser profile, you ensure that every account operates from a distinct, authentic residential identity — dramatically reducing the risk of detection or bans.
-
-## Dashboard Features
-
-Once you log in to the MiyaIP dashboard, you can manage all of your proxy assets in one place:
-
-- **View purchased IPs** — see all active IPs, their regions, and expiry dates at a glance
-- **QR code export** — generate a QR code for any IP configuration and scan it directly into your client app
-- **Manual renewal** — extend the validity of any IP on demand before it expires
-- **Auto-renewal** — enable automatic renewal so your critical IPs never go offline unexpectedly
-
-## Get Started
-
-Use the links below to learn about available proxy types, prepare your device, and follow the step-by-step setup guide for your preferred client app.
-
-<CardGroup cols={2}>
-  <Card title="Proxy Types" icon="layer-group" href="/proxy-types">
-    Explore the full range of static, dynamic, mobile, and live-streaming proxy options available on MiyaIP.
-  </Card>
-  <Card title="Device Preparation" icon="mobile-screen-button" href="/device-preparation">
-    Configure your device language, region, and location settings before activating a proxy.
-  </Card>
-  <Card title="Relay Proxy Setup" icon="tower-broadcast" href="/relay/ios-shadowrocket">
-    Follow the guided setup for Relay Proxy mode — no overseas environment required.
-  </Card>
-  <Card title="Native Proxy Setup" icon="network-wired" href="/native/ios-shadowrocket">
-    Chain MiyaIP's SOCKS5 residential IP on top of your existing overseas connection.
-  </Card>
-</CardGroup>
+<Card title="AdsPower static proxy setup" icon="globe" href="/integrations/adspower-static-proxy">
+  Download AdsPower, retrieve your MiyaIP relay proxy details, and create a browser profile.
+</Card>

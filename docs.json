@@ -18,7 +18,7 @@
             "tab": "指南",
             "groups": [
               {
-                "group": "关于",
+                "group": "入门",
                 "pages": [
                   "zh/introduction",
                   "zh/proxy-types",
@@ -62,22 +62,9 @@
                 ]
               },
               {
-                "group": "集成",
+                "group": "AdsPower",
                 "pages": [
-                  {
-                    "group": "指纹浏览器",
-                    "pages": [
-                      "zh/integrations/adspower-overview",
-                      "zh/integrations/adspower-static-proxy"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "账户与仪表板",
-                "pages": [
-                  "zh/dashboard/manage-proxies",
-                  "zh/dashboard/orders-billing"
+                  "zh/integrations/adspower-static-proxy"
                 ]
               }
             ]
@@ -91,7 +78,7 @@
             "tab": "Guides",
             "groups": [
               {
-                "group": "About",
+                "group": "Getting started",
                 "pages": [
                   "introduction",
                   "proxy-types",
@@ -99,7 +86,7 @@
                 ]
               },
               {
-                "group": "Relay Proxy",
+                "group": "Relay proxy",
                 "pages": [
                   {
                     "group": "iOS",
@@ -117,7 +104,7 @@
                 ]
               },
               {
-                "group": "Native Proxy",
+                "group": "Native proxy",
                 "pages": [
                   {
                     "group": "iOS",
@@ -135,22 +122,9 @@
                 ]
               },
               {
-                "group": "Integrations",
+                "group": "AdsPower",
                 "pages": [
-                  {
-                    "group": "Antidetect Browsers",
-                    "pages": [
-                      "integrations/adspower-overview",
-                      "integrations/adspower-static-proxy"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "Account & Dashboard",
-                "pages": [
-                  "dashboard/manage-proxies",
-                  "dashboard/orders-billing"
+                  "integrations/adspower-static-proxy"
                 ]
               }
             ]
@@ -165,5 +139,39 @@
   "logo": {
     "light": "/logo/miya-light.svg",
     "dark": "/logo/miya-dark.svg"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/zh/introduction"
+    },
+    {
+      "source": "/index",
+      "destination": "/zh/introduction"
+    },
+    {
+      "source": "/integrations/adspower-overview",
+      "destination": "/integrations/adspower-static-proxy"
+    },
+    {
+      "source": "/dashboard/manage-proxies",
+      "destination": "/introduction"
+    },
+    {
+      "source": "/dashboard/orders-billing",
+      "destination": "/introduction"
+    },
+    {
+      "source": "/zh/integrations/adspower-overview",
+      "destination": "/zh/integrations/adspower-static-proxy"
+    },
+    {
+      "source": "/zh/dashboard/manage-proxies",
+      "destination": "/zh/introduction"
+    },
+    {
+      "source": "/zh/dashboard/orders-billing",
+      "destination": "/zh/introduction"
+    }
+  ]
 }

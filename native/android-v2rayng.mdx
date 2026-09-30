@@ -1,69 +1,100 @@
 ---
-title: "Set Up Native SOCKS5 Proxy on Android with V2rayNG"
-sidebarTitle: "Android V2rayNG"
-description: "Configure V2rayNG on Android to route through your overseas proxy and exit via MiyaIP's static SOCKS5 residential IP for a two-hop connection."
+title: "Configure a native proxy on Android with v2rayNG"
+sidebarTitle: "Android v2rayNG"
+description: "Set an existing overseas node as a Pre-proxy in v2rayNG and connect to a MiyaIP static residential SOCKS5 native proxy."
 ---
 
-Native Proxy mode (原始代理) in V2rayNG works by configuring your existing overseas node as a **pre-proxy** for a subscription group, and then adding MiyaIP's SOCKS5 static IP as the outbound node within that group. Traffic flows from your device → overseas pre-proxy node → MiyaIP residential IP → destination, so the website sees only the clean residential IP. The steps below walk you through the full configuration.
+Use this guide if you already have an overseas network node and want to connect to a MiyaIP static residential **Native proxy** on Android.
 
-<Warning>
-  Native Proxy mode requires an active first-hop overseas node already imported and available in V2rayNG **before** you begin. If you do not have an overseas first-hop network, this setup will not work correctly.
-</Warning>
+Download and install v2rayNG from the [official v2rayNG releases page](https://github.com/2dust/v2rayNG/releases). You need a network connection that can access GitHub.
 
-<Note>
-  If you have not installed V2rayNG yet, download the latest release from the official GitHub page: [https://github.com/2dust/v2rayNG/releases](https://github.com/2dust/v2rayNG/releases)
-</Note>
+## Prepare your device
 
-## Prerequisites
+1. Open **Settings** and set your **time zone**, **language**, and **region** to match the proxy IP's target country or region. Menu names vary by Android device. Choose the target country's language and avoid using Simplified Chinese.
 
-Before you start, make sure you have the following ready:
+<Frame>
+  <img src="/images/tutorials/o_and_v2_1.png" alt="Adjust the date, time, language, and region on Android" style={{ width: "100%", maxWidth: "480px" }} />
+</Frame>
 
-- **V2rayNG** installed on your Android device.
-- An **existing overseas proxy node** already imported into V2rayNG — this will serve as your first hop (pre-proxy).
-- Your **MiyaIP SOCKS5 credentials**: IP address, port, username, and password. Find these in the MiyaIP dashboard under **Static Residential → your IP row**.
-- Location Services **disabled** on your device.
-- Your device's **language, region, and date/time** changed to match the target country.
+2. Find **Location** in **Settings** and turn it off.
 
-## Setup Steps
+<Frame>
+  <img src="/images/tutorials/o_and_v2_2.png" alt="Turn off Location in Android settings" style={{ width: "100%", maxWidth: "480px" }} />
+</Frame>
+
+See [Device preparation](/device-preparation) for more details.
+
+## Before you connect
+
+- Install **v2rayNG** on your Android phone and prepare a working overseas network node for your first network hop.
+- Get the SOCKS5 credentials for your static residential **Native proxy** from the MiyaIP dashboard: **host, port, username, and password**.
+
+## Configuration steps
 
 <Steps>
-  <Step title="Import and rename your overseas node">
-    In V2rayNG, import your existing overseas environment node if you have not done so already. Once imported, **rename it** to something clear and unique (for example, `Overseas-HK-01`).
+  <Step title="Import and edit your overseas node">
+    Import your existing overseas network nodes into v2rayNG. Select a working node and tap its **edit button**.
 
-    <Tip>
-      The overseas node name must be unique across all your nodes before V2rayNG will allow you to select it as a pre-proxy. If another node shares the same name, rename one of them now to avoid conflicts later.
-    </Tip>
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_3.png" alt="Select and edit your existing overseas network node in v2rayNG" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
+  <Step title="Give the node a unique name">
+    Change the overseas node's **name** so that no other node has the same name. Tap **✓** in the upper-right corner to save and remember the name.
 
-  <Step title="Open Subscription Group Settings">
-    Tap the **three-bar menu icon** (☰) in the top-left corner, then select **"Subscription Group Settings"** from the menu.
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_4.png" alt="Give the overseas network node a unique name and save" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
+  <Step title="Open Subscription group settings">
+    Tap the **three-line menu button** in the upper-left corner, then select **Subscription group settings**.
 
-  <Step title="Create a new subscription group with a pre-proxy">
-    Tap the **+ icon** to add a new subscription group. Fill in the following:
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_5.png" alt="Open the side menu in the upper-left corner of v2rayNG" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
 
-    1. Enter a **group name** (e.g., `MiyaIP Native`).
-    2. Set **"Pre-proxy"** to the overseas node you renamed in Step 1.
-    3. Tap **✓** to save the group.
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_6.png" alt="Select Subscription group settings in the v2rayNG menu" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
+  <Step title="Create a group with a Pre-proxy">
+    Tap the **plus button** in the upper-right corner to add a group. Enter a **Remark** and fill **Pre-proxy** with the overseas node name you just set. Tap **✓** to save.
 
-  <Step title="Add the MiyaIP SOCKS5 node to the group">
-    Tap **+** → **"Manual Input"**, then select **SOCKS5** as the protocol. Fill in all required fields:
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_7.png" alt="Tap the plus button on the Subscription group settings page" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
 
-    - **Note / Alias** — a label for this node (e.g., `MiyaIP-Static-US`).
-    - **Server** — the IP address from your MiyaIP dashboard.
-    - **Port** — the port number from your MiyaIP dashboard.
-    - **Username** — your MiyaIP SOCKS5 username.
-    - **Password** — your MiyaIP SOCKS5 password.
-
-    Tap **✓** to save the node and make sure it is assigned to the subscription group you created in Step 3.
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_8.png" alt="Enter a group remark and the overseas Pre-proxy node name" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
+  <Step title="Add a SOCKS5 static IP node">
+    Return to the node list and select the group you just created. Tap the **plus button** in the upper-right corner, select **Manual input**, and choose **SOCKS5** to add the static IP node.
 
-  <Step title="Connect and test">
-    Select the **MiyaIP static IP node** from your node list, then tap the **start button** (the V2rayNG logo) to activate the connection. Once connected, tap a **blank area** on the home screen to run a connectivity test and confirm the node is reachable.
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_9.png" alt="Tap the plus button in the v2rayNG node list" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
+
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_10.png" alt="Select Manual input for a SOCKS5 node" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
+  <Step title="Enter your MiyaIP proxy credentials">
+    Enter a **Remark** for the static IP node. Fill the **Server, Port, Username, and Password** fields with your MiyaIP native proxy **host, port, username, and password**, then tap **✓** in the upper-right corner to save.
 
-  <Step title="Verify your connection">
-    Open your browser and navigate to [whoer.net](https://whoer.net) to confirm that your visible IP address matches MiyaIP's residential IP and that the location reflects the intended target country.
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_11.png" alt="Enter the MiyaIP static residential SOCKS5 credentials and save the node" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
+  </Step>
+  <Step title="Connect and test latency">
+    Select the **MiyaIP static IP node** you configured and tap the **start button** at the bottom. Tap the **blank area** on the main screen to run a latency test.
+
+    <Frame>
+      <img src="/images/tutorials/o_and_v2_12.png" alt="Select the MiyaIP static IP node and start the connection and latency test" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
+  </Step>
+  <Step title="Verify your exit IP">
+    After the latency test responds, open [whoer.net](https://whoer.net) in your browser. Confirm that the displayed **IP address** matches the MiyaIP static residential IP you purchased and that the **country or region** is correct.
+
   </Step>
 </Steps>

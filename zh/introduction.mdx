@@ -1,74 +1,54 @@
 ---
-title: "MiyaIP：住宅代理服务入门指南"
-sidebarTitle: "Introduction"
-description: "MiyaIP 提供静态和动态住宅代理 IP，支持 iOS、Android 和桌面端，使用 Shadowrocket、Nekobox 或 V2rayNG 几分钟即可连接。"
+title: "MiyaIP 教程指南"
+sidebarTitle: "教程入口"
+description: "选择中转代理或原始代理，按教程在 iOS、Android 或 AdsPower 中配置 MiyaIP。"
 ---
 
-MiyaIP 是一款住宅代理服务，提供来自全球各地的真实、经过验证的住宅 IP 地址。无论您需要稳定的长期身份用于账号管理，还是用于数据采集的轮换 IP 池，或是专为社交媒体直播优化的独立 IP，MiyaIP 都能提供灵活的选择来适配您的工作流。您可以在几分钟内通过手机或桌面设备完成接入。
-
-## MiyaIP 的工作原理
-
-MiyaIP 根据您是否已有海外网络环境，提供两种截然不同的使用模式。
+根据你使用的代理模式和客户端，选择下方教程。手机配置前，先完成设备准备；使用原始代理时，你需要自备海外网络环境。
 
 <CardGroup cols={2}>
-  <Card title="中转代理" icon="tower-broadcast">
-    MiyaIP 提供完整的中转链路。您**无需**自备海外 VPN 或代理环境。只需在您的客户端应用中配置提供的服务器地址和认证信息，MiyaIP 便会自动处理从您的设备到住宅 IP 出口节点的路由。
+  <Card title="选择代理模式" icon="layer-group" href="/zh/proxy-types">
+    了解中转代理和原始代理的准备条件。
   </Card>
-
-  <Card title="原始代理" icon="network-wired">
-    您需要提供自己的第一跳海外网络连接（例如已有的 VPN 或代理）。MiyaIP 随后会以 **SOCKS5 住宅 IP** 作为**第二跳**，在现有连接之上叠加一层真实的住宅身份，以实现最高的真实性。
+  <Card title="设备准备" icon="mobile-screen-button" href="/zh/device-preparation">
+    关闭手机定位，调整语言、地区和日期时间。
   </Card>
 </CardGroup>
 
-## 支持的客户端应用
-
-MiyaIP 兼容 iOS 和 Android 平台上最广泛使用的代理客户端应用。每个应用都支持通过二维码、订阅链接或手动输入的方式导入您的代理配置。
+## 中转代理教程
 
 <CardGroup cols={3}>
-  <Card title="Shadowrocket" icon="apple" href="/zh/relay/ios-shadowrocket">
-    推荐的 **iOS** 客户端。支持 SOCKS5 和 HTTP 代理，界面简洁、稳定可靠。
+  <Card title="iOS · Shadowrocket" icon="apple" href="/zh/relay/ios-shadowrocket">
+    扫描中转代理二维码，连接并检查出口 IP。
   </Card>
-
-  <Card title="Nekobox" icon="robot" href="/zh/relay/android-nekobox">
-    一款强大且灵活的 **Android** 代理客户端，支持包括 SOCKS5 在内的多种协议。
+  <Card title="Android · NekoBox" icon="android" href="/zh/relay/android-nekobox">
+    扫描 NekoBox 二维码，选择节点并连接。
   </Card>
-
-  <Card title="V2rayNG" icon="android" href="/zh/relay/android-v2rayng">
-    一款广受欢迎的 **Android** 客户端，协议支持广泛，适合已熟悉 V2Ray 生态的用户。
+  <Card title="Android · v2rayNG" icon="android" href="/zh/relay/android-v2rayng">
+    扫描 v2rayNG 二维码，启动代理并检查出口 IP。
   </Card>
 </CardGroup>
 
-## AdsPower 集成
+## 原始代理教程
 
-MiyaIP 可无缝集成 **AdsPower**，这款业界领先的多账号防关联浏览器。通过为每个浏览器配置分配一个独立的 MiyaIP 住宅 IP，您可以确保每个账号都在一个独特、真实的住宅身份下运行，从而大幅降低被检测或封禁的风险。
+<Note>
+  以下教程需要你准备可用的海外网络环境，以及 MiyaIP 静态住宅原始代理的 SOCKS5 节点。
+</Note>
 
-## 控制台功能
-
-登录 MiyaIP 控制台后，您可以在一个地方管理所有代理资源：
-
-- **查看已购 IP**：一目了然地查看所有活跃 IP 及其地区、到期时间
-- **二维码导出**：为任意 IP 配置生成二维码，并直接扫描到客户端应用
-- **手动续费**：在到期前按需延长任意 IP 的有效期
-- **自动续费**：开启自动续费，确保关键 IP 不会意外离线
-
-## 开始使用
-
-点击下方链接了解可用的代理类型、准备您的设备，并按照分步指南配置您偏好的客户端应用。
-
-<CardGroup cols={2}>
-  <Card title="代理类型" icon="layer-group" href="/zh/proxy-types">
-    探索 MiyaIP 提供的静态、动态、移动端和直播代理等完整选项。
+<CardGroup cols={3}>
+  <Card title="iOS · Shadowrocket" icon="apple" href="/zh/native/ios-shadowrocket">
+    为原始代理设置**代理通过**，选择你自备的海外网络。
   </Card>
-
-  <Card title="设备准备" icon="mobile-screen-button" href="/zh/device-preparation">
-    在激活代理前，配置您的设备语言、地区和位置设置。
+  <Card title="Android · NekoBox" icon="android" href="/zh/native/android-nekobox">
+    添加 SOCKS5 节点，将它设为海外网络分组的**落地代理**。
   </Card>
-
-  <Card title="中转代理设置" icon="tower-broadcast" href="/zh/relay/ios-shadowrocket">
-    按照引导完成中转代理模式的设置，无需海外环境。
-  </Card>
-
-  <Card title="原始代理设置" icon="network-wired" href="/zh/native/ios-shadowrocket">
-    在现有海外连接之上串联 MiyaIP 的 SOCKS5 住宅 IP。
+  <Card title="Android · v2rayNG" icon="android" href="/zh/native/android-v2rayng">
+    设置海外节点为**前置代理**，再添加 MiyaIP SOCKS5 节点。
   </Card>
 </CardGroup>
+
+## AdsPower 教程
+
+<Card title="AdsPower 静态代理配置" icon="globe" href="/zh/integrations/adspower-static-proxy">
+  下载 AdsPower，提取 MiyaIP 中转代理信息，并创建浏览器配置文件。
+</Card>

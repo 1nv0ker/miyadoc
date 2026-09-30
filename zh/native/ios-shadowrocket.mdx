@@ -1,47 +1,83 @@
 ---
-title: "在 iPhone 上使用 Shadowrocket 设置原生 SOCKS5 代理"
+title: "在 iPhone 上使用 Shadowrocket 配置原始代理"
 sidebarTitle: "iOS Shadowrocket"
-description: "通过 Shadowrocket 在 iPhone 上将 MiyaIP 的 SOCKS5 住宅 IP 串联为第二跳代理，需要设备上已有可用的海外 VPN。"
+description: "通过 Shadowrocket 的代理通过功能，在自备海外网络环境中连接 MiyaIP 静态住宅原始代理。"
 ---
 
-原生代理模式（原始代理）让你在现有的海外 VPN 或代理网络之上，将 MiyaIP 的 SOCKS5 住宅 IP 串联为**第二跳**。流量不会直接从你的设备发往住宅 IP，而是先经过第一跳的海外连接作为入口隧道，再由 MiyaIP 的静态住宅 IP 作为干净的出口节点被网站识别。本指南将带领你在 iPhone 上的 Shadowrocket 中完成这一双层代理链的配置。
+本教程适用于你已准备好海外网络环境，并需要在 iPhone 上连接 MiyaIP 静态住宅原始代理的情况。
 
-<Warning>
-  该模式要求你的设备上**提前**安装并运行好第一层的海外网络（VPN 或代理）。如果没有可用的海外第一跳网络，原生代理模式将无法正常工作。
-</Warning>
+## 设备准备
 
-## 准备工作
+1. 打开 **设置 → 隐私与安全性 → 定位服务**，关闭 **定位服务**。
 
-在开始之前，请确保你已准备好以下内容：
+<Frame>
+  <img src="/images/tutorials/o_ios_sr_1.png" alt="在 iPhone 设置中关闭定位服务" style={{ width: "100%", maxWidth: "480px" }} />
+</Frame>
 
-- iPhone 上已安装 **Shadowrocket**（可在 App Store 下载）。
-- 设备上已配置并启用的**现有海外 VPN 或代理**，这将成为你的第一跳。
-- **MiyaIP SOCKS5 凭据**：IP 地址、端口、用户名和密码。请在 MiyaIP 控制台的**静态住宅 → 你的 IP 行**中查看。
-- 设备上的定位服务已**关闭**。
-- iPhone 的**语言、地区和日期/时间**已更改为目标国家/地区。
+2. 打开 **设置 → 通用**，将 **日期与时间** 的时区、**语言与地区** 调整为代理 IP 的目标国家或地区。选择目标国家的语言，避免使用简体中文。
 
-## 设置步骤
+<Frame>
+  <img src="/images/tutorials/o_ios_sr_2.png" alt="在 iPhone 上调整日期、时间、语言和地区" style={{ width: "100%", maxWidth: "480px" }} />
+</Frame>
+
+你也可以参考[设备准备](/zh/device-preparation)了解这些设置。
+
+## 连接前的准备
+
+- 在 iPhone 上安装 **Shadowrocket**，并准备好可用的海外网络节点，作为第一层网络环境。
+- 在 MiyaIP 后台准备好静态住宅 **原始代理** 的 SOCKS5 节点及二维码。确认你有代理主机、端口、用户名和密码。
+
+<Frame>
+  <img src="/images/tutorials/4.png" alt="在 MiyaIP 后台查看静态住宅原始代理的二维码和凭据" />
+</Frame>
+
+## 配置步骤
 
 <Steps>
-  <Step title="导入 MiyaIP SOCKS5 节点">
-    打开 Shadowrocket，点击左上角的**二维码扫描图标**，扫描 MiyaIP 控制台中提供的 SOCKS5 节点二维码。系统会自动将静态住宅 IP 节点导入 Shadowrocket。
+  <Step title="扫描原始代理二维码">
+    打开 Shadowrocket，点击左上角的 **扫描按钮**，扫描 MiyaIP 后台的原始代理二维码，导入静态 IP 节点。
+
+    <Frame>
+      <img src="/images/tutorials/o_ios_sr_4.png" alt="点击 Shadowrocket 左上角的扫描按钮" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
   <Step title="打开节点设置">
-    在服务器列表中找到刚导入的 MiyaIP 节点，点击节点行右侧的**感叹号（!）**，打开详细设置页面。
+    点击刚导入的静态 IP 节点右侧的 **感叹号按钮**，进入节点设置。
+
+    <Frame>
+      <img src="/images/tutorials/o_ios_sr_5.png" alt="点击静态 IP 节点右侧的感叹号进入设置" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
-  <Step title="进入 Proxy Via 设置">
-    在节点设置页面中向下滚动，点击 **"Proxy Via"（代理通过）**。该选项告诉 Shadowrocket，将此节点的连接通过另一个代理（即你现有的海外网络）进行路由。
+  <Step title="打开代理通过设置">
+    在节点设置中点击 **代理通过**。
+
+    <Frame>
+      <img src="/images/tutorials/o_ios_sr_6.png" alt="在 Shadowrocket 节点设置中打开代理通过" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
-  <Step title="选择你的海外网络作为第一跳">
-    在可用代理列表中，选择你的**自有海外 VPN 或代理**作为代理穿透（Proxy Via）。这表示它将作为 MiyaIP 的 SOCKS5 节点所经过的第一跳。
+  <Step title="选择自备的海外网络节点">
+    在 **代理通过** 中选择你已准备好的海外网络节点。
+
+    <Frame>
+      <img src="/images/tutorials/o_ios_sr_7.png" alt="在代理通过列表中选择自备的海外网络节点" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
-  <Step title="确认设置并保存">
-    返回节点设置页面，确认协议已设置为 **SOCKS5**，且所有代理详情（IP、端口、用户名、密码）均正确无误。点击**保存**以应用更改。
+  <Step title="检查配置并保存">
+    确认协议为 **SOCKS5**，核对 MiyaIP 原始代理的 **主机、端口、用户名和密码**。检查 **代理通过** 已选择正确的海外节点，然后点击 **保存**。
+
+    <Frame>
+      <img src="/images/tutorials/o_ios_sr_8.png" alt="检查 SOCKS5 协议和代理通过设置后保存节点" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
-  <Step title="使用静态 IP 节点连接">
-    回到 Shadowrocket 主页，将 MiyaIP 静态 IP 设为**当前活动节点**。**全局路由**设置为**代理**，然后点击屏幕顶部的**火箭按钮**开始连接。
+  <Step title="启动静态 IP 节点">
+    返回 Shadowrocket 首页，选择 MiyaIP 的 **静态 IP 节点**。将 **全局路由** 设为 **代理**，打开顶部的 **连接开关**。
+
+    <Frame>
+      <img src="/images/tutorials/o_ios_sr_9.png" alt="选择静态 IP 节点并启动 Shadowrocket 代理连接" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
-  <Step title="验证连接">
-    打开浏览器，访问 [whoer.net](https://whoer.net)，确认你显示的 IP 地址与 MiyaIP 的住宅 IP 一致，且位置信息反映目标国家/地区。
+  <Step title="核验出口 IP">
+    在浏览器中打开 [whoer.net](https://whoer.net)。确认显示的 **IP 地址** 与你购买的 MiyaIP 静态住宅 IP 一致，并检查 **国家或地区** 是否符合预期。
+
   </Step>
 </Steps>

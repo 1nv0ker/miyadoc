@@ -1,58 +1,41 @@
 ---
-title: "Use MiyaIP Static Proxy in AdsPower Browser Profiles"
-sidebarTitle: "Static Proxy Setup"
-description: "Configure a MiyaIP static residential IP inside an AdsPower browser profile — extract credentials, set up the proxy, and verify the connection."
+title: "Use a MiyaIP static proxy in AdsPower"
+sidebarTitle: "AdsPower static proxy"
+description: "Download AdsPower, retrieve your MiyaIP relay proxy details, create a browser profile, and check the proxy connection."
 ---
 
-This guide walks you through the complete workflow for using a MiyaIP static residential proxy inside an AdsPower browser profile — from locating your proxy credentials in the MiyaIP dashboard, to creating a fully configured browser environment in AdsPower, to verifying that the connection is live and working. By the end, your AdsPower profile will route all traffic through your chosen MiyaIP residential IP.
+Download and install AdsPower from the [AdsPower download page](https://www.adspower.net/share/miyaip), then follow these steps to configure your MiyaIP static proxy.
 
 <Note>
-  If you are using a **relay proxy** (中转代理) instead of the original proxy, make sure to close any other VPN or proxy software running on your computer before connecting. Running multiple proxy or VPN clients simultaneously can cause connection conflicts and prevent the relay proxy from working correctly.
+  This tutorial demonstrates a **relay proxy**. Close other proxy or VPN tools on your computer before using it.
 </Note>
 
-## Setup Steps
-
 <Steps>
-  <Step title="Extract Your Proxy Credentials from the MiyaIP Dashboard">
-    Log in to your MiyaIP account at [miyaip.com](https://miyaip.com) and navigate to the **Static Residential** section in the left sidebar.
+  <Step title="Retrieve your proxy details">
+    Log in to the MiyaIP dashboard and find the IP you want to use under **Purchased static proxies**. Retrieve its **relay proxy** details: host address (IP), port, username, and password.
 
-    In the **Purchased IPs** (已购IP) tab, locate the IP row you want to use. You have two ways to retrieve the credentials:
-
-    - **Copy icon** — click the copy icon in the **Original Proxy** (原始代理) or **Relay Proxy** (中转代理) column to copy the full proxy string to your clipboard. The string includes the IP address, port, username, and password.
-    - **QR code icon** — click the QR icon on the row to open a modal that displays the proxy details. The modal includes tabs for **Shadowrocket**, **Nekobox**, and **V2ray** — for this AdsPower integration, you only need the raw IP, port, username, and password values shown in the modal.
-
-    Note down or keep in your clipboard the following four values before moving to AdsPower:
-
-    - **IP address**
-    - **Port**
-    - **Username**
-    - **Password**
+    <Frame>
+      <img src="/images/tutorials/5.png" alt="Retrieve relay proxy details for a purchased static proxy in MiyaIP" />
+    </Frame>
   </Step>
+  <Step title="Create a browser profile">
+    Log in to AdsPower, then complete the following:
 
-  <Step title="Create a Browser Profile in AdsPower with Your MiyaIP Proxy">
-    Open AdsPower and click **New Browser** to start creating a new browser profile.
+    1. Click **New browser** and enter the environment name and browser parameters you need.
+    2. Find **Proxy configuration** and set **Proxy method** to **Custom**.
+    3. Set **Proxy type** to `Socks5`, `HTTP`, or `HTTPS`, according to the proxy details you retrieved.
+    4. Enter the host address (IP), port, username, and password in their corresponding fields.
+    5. Click **Check proxy**. Once the test succeeds, click **OK** to save the browser profile.
 
-    1. Enter a descriptive **environment name** for the profile (for example, the account or platform it will be used for).
-    2. Configure any browser fingerprint parameters as needed for your use case.
-    3. Scroll down to the **Proxy Configuration** section.
-    4. Set the **Proxy Method** to **Custom**.
-    5. Select your preferred **Proxy Type**: `Socks5`, `HTTP`, or `HTTPS`.
-    6. Fill in the credential fields using the values you copied from MiyaIP:
-       - **Proxy Host / IP** — the IP address from your MiyaIP dashboard
-       - **Port** — the port number
-       - **Username** — your proxy username
-       - **Password** — your proxy password
-    7. Click **Check Proxy** to test the connection. AdsPower will verify that the proxy is reachable and return a success message if everything is configured correctly.
-    8. Once the check passes, click **OK** to save the browser profile.
+    <Frame>
+      <img src="/images/tutorials/6.png" alt="Enter custom proxy details in AdsPower and check the proxy" />
+    </Frame>
   </Step>
+  <Step title="Open the browser to use the proxy">
+    In the browser profile list, click **Open** on the right of the profile to start using your MiyaIP static proxy.
 
-  <Step title="Open the Profile and Start Browsing">
-    Back on the AdsPower browser profiles list, find the profile you just created and click the **Open** button next to it.
-
-    AdsPower will launch a new browser window for that profile, routing all traffic through your MiyaIP static residential IP.
-
-    <Tip>
-      When the browser opens, check the AdsPower **start page** — it displays the connected IP address, geographic region, and fingerprint information for that profile. Use this to confirm that your MiyaIP proxy is active and that the displayed location matches your expected IP region.
-    </Tip>
+    <Frame>
+      <img src="/images/tutorials/7.png" alt="Open the AdsPower browser configured with a MiyaIP static proxy" />
+    </Frame>
   </Step>
 </Steps>

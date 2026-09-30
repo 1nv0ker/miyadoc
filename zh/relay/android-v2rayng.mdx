@@ -1,54 +1,37 @@
 ---
-title: "通过 V2rayNG 在 Android 上连接 MiyaIP 中转代理"
-sidebarTitle: "Android V2rayNG"
-description: "在Android上使用V2rayNG配置MiyaIP中转代理：扫描仪表盘中的二维码，即可开始通过住宅IP路由流量。"
+title: "使用 v2rayNG 配置 Android 中转代理"
+sidebarTitle: "Android v2rayNG"
+description: "扫描 MiyaIP 中转代理二维码，在 Android 上使用 v2rayNG 连接、测试延迟并检查出口 IP。"
 ---
 
-MiyaIP 的中转代理模式让你只需将一个简单的二维码导入 V2rayNG，即可将 Android 流量路由到住宅 IP。V2rayNG 是一款轻量开源的代理客户端，支持 MiyaIP 中转基础设施所使用的 V2ray 协议。
+从 [v2rayNG 官方发布页](https://github.com/2dust/v2rayNG/releases) 下载并安装应用。访问下载页面需要可用的海外网络。
 
-<Warning>
-  中转代理模式不能与其他 VPN 或代理工具同时运行。连接前请关闭并禁用设备上所有正在运行的 VPN 应用，以避免冲突和连接失败。
-</Warning>
+连接前，按 [设备准备](/zh/device-preparation) 调整手机设置。
 
-<Note>
-  从 releases 页面下载最新版 V2rayNG APK：[https://github.com/Kejifaxian/welcome/releases/tag](https://github.com/Kejifaxian/welcome/releases/tag)。注意，该下载链接需要已有海外网络才能访问。下载完成后安装 APK，你可能需要在 Android 安全设置中允许安装未知来源的应用。
-</Note>
-
-## 连接前的准备
-
-为确保目标网站看到正确的区域和位置信息，请在启动 V2rayNG 前按以下步骤调整 Android 设备设置：
-
-1. **关闭定位服务**：进入 **设置 → 位置**，将其关闭。
-2. **更改语言和地区**：进入 **设置 → 常规管理 → 语言和输入法**，将语言和地区设为目标国家。
-3. **更改时区**：进入 **设置 → 常规管理 → 日期和时间**，关闭自动时区，然后选择与你目标国家对应的时区。
-
-## 查找你的二维码
-
-登录 MiyaIP 仪表盘并进入 **静态住宅**。找到你已购买 IP 所在的行，点击该行中的 **二维码图标**。弹出窗口中将显示三个标签页：**Shadowrocket**、**Nekobox** 和 **V2ray**，选择 **V2ray** 标签页以显示适用于 V2rayNG 的二维码。
-
-## 使用 V2rayNG 连接
+## 连接中转代理
 
 <Steps>
-  <Step title="打开 V2rayNG 并点击添加按钮">
-    在 Android 设备上启动 V2rayNG。从首页点击右上角的 **\+** 按钮，打开节点导入菜单。
+  <Step title="打开二维码扫描器">
+    打开 v2rayNG 首页，点击右上角的 **加号**，选择 **扫描二维码**。
+
+    <Frame>
+      <img src="/images/tutorials/m_and_v2_1.png" alt="在 v2rayNG 添加菜单中选择扫描二维码" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
-  <Step title="选择扫描二维码">
-    在导入选项中选择 **扫描二维码**，打开相机扫描器。
+  <Step title="扫描并导入 v2rayNG 二维码">
+    在 MiyaIP 官网打开已购 IP 的中转代理二维码，选择 **V2ray**，扫描对应二维码并导入节点。
+
+    <Frame>
+      <img src="/images/tutorials/3.png" alt="在 MiyaIP 官网查看中转代理的 V2ray 二维码" />
+    </Frame>
   </Step>
-  <Step title="扫描 V2ray 二维码">
-    将相机对准 MiyaIP 仪表盘中显示的 **V2ray 二维码**。V2rayNG 会自动识别该二维码并将代理节点配置导入你的节点列表。
-  </Step>
-  <Step title="启动代理连接">
-    点击 V2rayNG 首页底部的 **启动按钮** 以启用代理。Android 会提示允许 VPN 配置，点击 **确定** 并根据需要进行身份验证。
-  </Step>
-  <Step title="测试连接">
-    在节点列表的空白区域点击以运行连接测试。节点旁会显示响应时间值，表示通过你的 MiyaIP 住宅 IP 连接成功。
-  </Step>
-  <Step title="验证你的 IP 地址">
-    打开浏览器，访问 **whoer.net**，确认显示的 IP 地址和位置信息与你在 MiyaIP 中配置的住宅 IP 一致。
+  <Step title="连接并检查出口 IP">
+    选择导入的节点，点击下方的 **启动按钮**，再点击 **空白区域** 测试连接延迟。
+
+    <Frame>
+      <img src="/images/tutorials/m_and_v2_3.png" alt="启动 v2rayNG 代理并点击空白区域测试连接" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
+
+    测试完成后，打开 Google 浏览器，访问 [whoer.net](https://whoer.net)，检查出口 IP 和地区是否与你配置的 MiyaIP 代理一致。
   </Step>
 </Steps>
-
-<Note>
-  在 whoer.net 上，检查显示的 IP 是否与你配置的 MiyaIP 住宅 IP 匹配，并确认国家和匿名度评分是否符合预期。如果你的真实 IP 仍然可见，请确保设备上没有其他 VPN 或代理应用同时运行。
-</Note>

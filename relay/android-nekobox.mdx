@@ -1,62 +1,63 @@
 ---
-title: "Connect to MiyaIP Relay Proxy on Android via Nekobox"
-sidebarTitle: "Android Nekobox"
-description: "Set up MiyaIP's relay proxy on Android with Nekobox — download the app, scan the QR code from your dashboard, and verify your IP at whoer.net."
+title: "Set up a relay proxy on Android with NekoBox"
+sidebarTitle: "Android NekoBox"
+description: "Prepare your Android phone, scan your MiyaIP relay proxy QR code, and use NekoBox to connect and test latency."
 ---
 
-MiyaIP's relay proxy mode lets you route your Android traffic through a residential IP without needing an existing overseas VPN. Nekobox is a free, open-source proxy client that imports your MiyaIP configuration with a single QR code scan — no manual setup needed.
+Download and install [NekoBox 1.4.2](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases/tag/1.4.2), then follow these steps to configure your MiyaIP relay proxy.
 
-<Warning>
-  Relay proxy mode is incompatible with other VPN or proxy tools running simultaneously. Before connecting, close and disable any other VPN apps active on your device to avoid conflicts and connection failures.
-</Warning>
-
-<Note>
-  Download the latest Nekobox APK directly from the official GitHub releases page:
-  [https://github.com/MatsuriDayo/NekoBoxForAndroid/releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases). Install the APK after downloading — you may need to allow installation from unknown sources in your Android security settings.
-</Note>
-
-## Before You Connect
-
-To ensure your target website sees the correct locale and location metadata, adjust the following settings on your Android device before launching Nekobox:
-
-1. **Disable Location Services** — go to **Settings → Location** and turn it off.
-2. **Change language and region** — go to **Settings → General Management → Language and Input** and set the language and region to your target country.
-3. **Change date and time timezone** — go to **Settings → General Management → Date and Time**, disable automatic timezone, and select the timezone that matches your target country.
-
-## Find Your QR Code
-
-Log in to your MiyaIP dashboard and navigate to **Static Residential**. Locate the row for your purchased IP and click the **QR icon** in that row. A dialog will appear with three tabs: **Shadowrocket**, **Nekobox**, and **V2ray** — select the **Nekobox** tab to display the correct QR code.
-
-## Connect with Nekobox
+## Prepare your Android phone
 
 <Steps>
-  <Step title="Open Nekobox and tap the add button">
-    Launch Nekobox on your Android device. From the home screen, tap the **+** button in the top-right corner to open the node import menu.
+  <Step title="Set the date, time, language, and region">
+    Find **General** and set your phone's date and time to those of your target country or region. Choose a language other than Simplified Chinese, preferably your target country's language, and set the region to your target country or region.
+
+    <Frame>
+      <img src="/images/tutorials/m_and_nb_1.png" alt="Adjust the date, time, language, and region in Android settings" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
-  <Step title="Select Scan QR Code">
-    From the import options, select **Scan QR Code** to open the camera scanner.
-  </Step>
-  <Step title="Scan the Nekobox QR code">
-    Point your camera at the **Nekobox QR code** displayed in your MiyaIP dashboard. Nekobox will automatically detect the code and save the proxy node to your node list.
-  </Step>
-  <Step title="Select the imported node">
-    Back on the Nekobox home screen, tap the node that was just added to select it. A checkmark or highlight will indicate it is the active node.
-  </Step>
-  <Step title="Connect to the proxy">
-    Tap the **paper airplane button** at the bottom of the screen to start the proxy connection. Android will prompt you to allow a VPN configuration — tap **OK** and authenticate if asked.
-  </Step>
-  <Step title="Test latency">
-    Tap the **pink area** next to your node to run a latency test. A successful result confirms that Nekobox has established a connection through your MiyaIP residential IP.
-  </Step>
-  <Step title="Verify your IP address">
-    Open your browser and navigate to **whoer.net** to confirm that your IP address and location reflect the residential IP you configured in MiyaIP.
+  <Step title="Turn off location">
+    Find **Location** and turn it off to prevent apps from reading your location.
+
+    <Frame>
+      <img src="/images/tutorials/m_and_nb_2.png" alt="Turn off location in Android settings" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
 </Steps>
 
-<Warning>
-  If the connection fails or the latency test times out, disable the proxy by tapping the paper airplane button again, wait a few seconds, then tap it again to reconnect. Persistent failures may indicate a temporary node issue — try re-scanning the QR code or refreshing your session in the MiyaIP dashboard.
-</Warning>
+## Connect your relay proxy
 
-<Note>
-  On whoer.net, check that the displayed IP matches your MiyaIP residential IP and that the country and anonymity score meet your expectations. If the IP still shows your real location, confirm that Location Services is fully disabled and no other VPN is active.
-</Note>
+<Steps>
+  <Step title="Open the add menu">
+    Open the NekoBox home screen and tap the **plus button** in the top-right corner.
+
+    <Frame>
+      <img src="/images/tutorials/m_and_nb_3.png" alt="Tap the plus button in the top-right corner of NekoBox" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
+  </Step>
+  <Step title="Select the QR scanner">
+    Select **Scan QR code** from the add menu.
+
+    <Frame>
+      <img src="/images/tutorials/m_and_nb_4.png" alt="Select Scan QR code from the NekoBox add menu" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
+  </Step>
+  <Step title="Scan and import the NekoBox QR code">
+    On the MiyaIP website, open the relay proxy QR code for your purchased IP, select **NekoBox**, and scan its QR code to save the node.
+
+    <Frame>
+      <img src="/images/tutorials/2.png" alt="View the relay proxy NekoBox QR code on the MiyaIP website" />
+    </Frame>
+  </Step>
+  <Step title="Connect and test latency">
+    Select the static node you just saved and tap the **paper plane button** at the bottom to connect. Tap the **pink area** to test handshake latency. If the test fails or times out, turn off the **paper plane button** and reconnect.
+
+    <Frame>
+      <img src="/images/tutorials/m_and_nb_6.png" alt="Select a NekoBox node, connect, and test latency in the pink area" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
+
+    Once connected, open [whoer.net](https://whoer.net) in your browser. Check that the exit IP and region match your configured MiyaIP proxy.
+  </Step>
+</Steps>
+
+You can also watch the [NekoBox video reference](https://www.youtube.com/watch?v=kToFOqzVfh4&t=836s).

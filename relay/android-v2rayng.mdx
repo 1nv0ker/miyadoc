@@ -1,55 +1,37 @@
 ---
-title: "Connect to MiyaIP Relay Proxy on Android via V2rayNG"
-sidebarTitle: "Android V2rayNG"
-description: "Set up MiyaIP's relay proxy on Android with V2rayNG — scan the QR code from your dashboard and start routing traffic through a residential IP."
+title: "Set up a relay proxy on Android with v2rayNG"
+sidebarTitle: "Android v2rayNG"
+description: "Scan your MiyaIP relay proxy QR code, connect with v2rayNG on Android, test latency, and check your exit IP."
 ---
 
-MiyaIP's relay proxy mode lets you route your Android traffic through a residential IP by importing a simple QR code into V2rayNG. V2rayNG is a lightweight, open-source proxy client that supports the V2ray protocol used by MiyaIP's relay infrastructure.
+Download and install the app from the [official v2rayNG releases page](https://github.com/2dust/v2rayNG/releases). You need an overseas network connection to access the download page.
 
-<Warning>
-  Relay proxy mode is incompatible with other VPN or proxy tools running simultaneously. Before connecting, close and disable any other VPN apps active on your device to avoid conflicts and connection failures.
-</Warning>
+Before connecting, follow [Device preparation](/device-preparation) to adjust your phone settings.
 
-<Note>
-  Download the latest V2rayNG APK from the releases page:
-  [https://github.com/Kejifaxian/welcome/releases/tag](https://github.com/Kejifaxian/welcome/releases/tag). Note that this download link requires existing overseas internet access to reach. Install the APK after downloading — you may need to allow installation from unknown sources in your Android security settings.
-</Note>
-
-## Before You Connect
-
-To ensure your target website sees the correct locale and location metadata, adjust the following settings on your Android device before launching V2rayNG:
-
-1. **Disable Location Services** — go to **Settings → Location** and turn it off.
-2. **Change language and region** — go to **Settings → General Management → Language and Input** and set the language and region to your target country.
-3. **Change date and time timezone** — go to **Settings → General Management → Date and Time**, disable automatic timezone, and select the timezone that matches your target country.
-
-## Find Your QR Code
-
-Log in to your MiyaIP dashboard and navigate to **Static Residential**. Locate the row for your purchased IP and click the **QR icon** in that row. A dialog will appear with three tabs: **Shadowrocket**, **Nekobox**, and **V2ray** — select the **V2ray** tab to display the correct QR code for V2rayNG.
-
-## Connect with V2rayNG
+## Connect your relay proxy
 
 <Steps>
-  <Step title="Open V2rayNG and tap the add button">
-    Launch V2rayNG on your Android device. From the home screen, tap the **+** button in the top-right corner to open the node import menu.
+  <Step title="Open the QR scanner">
+    Open the v2rayNG home screen, tap the **plus button** in the top-right corner, and select **Scan QR code**.
+
+    <Frame>
+      <img src="/images/tutorials/m_and_v2_1.png" alt="Select Scan QR code from the v2rayNG add menu" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
   </Step>
-  <Step title="Select Scan QR Code">
-    From the import options, select **Scan QR Code** to open the camera scanner.
+  <Step title="Scan and import the v2rayNG QR code">
+    On the MiyaIP website, open the relay proxy QR code for your purchased IP, select **V2ray**, and scan its QR code to import the node.
+
+    <Frame>
+      <img src="/images/tutorials/3.png" alt="View the relay proxy V2ray QR code on the MiyaIP website" />
+    </Frame>
   </Step>
-  <Step title="Scan the V2ray QR code">
-    Point your camera at the **V2ray QR code** displayed in your MiyaIP dashboard. V2rayNG will automatically detect and import the proxy node configuration into your node list.
-  </Step>
-  <Step title="Start the proxy connection">
-    Tap the **start button** at the bottom of the V2rayNG home screen to enable the proxy. Android will prompt you to allow a VPN configuration — tap **OK** and authenticate if asked.
-  </Step>
-  <Step title="Test the connection">
-    Tap a blank area in the node list to run a connection test. A response time value will appear next to the node, confirming a successful connection through your MiyaIP residential IP.
-  </Step>
-  <Step title="Verify your IP address">
-    Open your browser, navigate to **whoer.net**, and confirm that your displayed IP address and location match the residential IP you configured in MiyaIP.
+  <Step title="Connect and check your exit IP">
+    Select the imported node, tap the **start button** at the bottom, and tap the **blank area** to test connection latency.
+
+    <Frame>
+      <img src="/images/tutorials/m_and_v2_3.png" alt="Start the v2rayNG proxy and tap the blank area to test the connection" style={{ width: "100%", maxWidth: "480px" }} />
+    </Frame>
+
+    After the test, open the Google browser and visit [whoer.net](https://whoer.net). Check that the exit IP and region match your configured MiyaIP proxy.
   </Step>
 </Steps>
-
-<Note>
-  On whoer.net, check that the displayed IP matches your MiyaIP residential IP and that the country and anonymity score meet your expectations. If your real IP is still visible, make sure no other VPN or proxy app is running simultaneously on your device.
-</Note>
