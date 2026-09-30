@@ -1,0 +1,62 @@
+---
+title: "Set Up Native SOCKS5 Proxy on Android with Nekobox"
+sidebarTitle: "Android Nekobox"
+description: "Use MiyaIP's SOCKS5 IP as a second-layer proxy in Nekobox on Android — chain it through your existing overseas subscription for a clean residential exit node."
+---
+
+Native Proxy mode (原始代理) lets you place MiyaIP's SOCKS5 residential IP as the **exit node** of a two-hop chain. In Nekobox, you accomplish this by attaching MiyaIP's static IP as the "Landing Proxy" for a subscription group that contains your existing overseas network. The result is that all outbound traffic enters through your overseas subscription node and exits from MiyaIP's residential IP — giving you a clean, location-matched identity at the destination.
+
+<Note>
+  If you have not installed Nekobox yet, download the latest release from the official GitHub page: [https://github.com/MatsuriDayo/NekoBoxForAndroid/releases](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
+</Note>
+
+## Prerequisites
+
+Before you start, make sure you have the following ready:
+
+- **Nekobox** installed on your Android device.
+- An **existing overseas proxy subscription link** — this is your first-hop network.
+- Your **MiyaIP SOCKS5 credentials**: IP address, port, username, and password. Find these in the MiyaIP dashboard under **Static Residential → your IP row**.
+- Location Services **disabled** on your device.
+- Your device's **language, region, and date/time** changed to match the target country.
+
+## Setup Steps
+
+<Steps>
+  <Step title="Add the MiyaIP SOCKS5 node manually">
+    Open Nekobox and tap the **+ icon** in the top-right corner. Select **"Manual Input"** from the menu, then choose **SOCKS** as the protocol. Fill in the following fields:
+
+    1. **Name** — give the node a recognizable label (e.g., `MiyaIP-Static`).
+    2. **Server / Port** — enter the IP address and port from your MiyaIP dashboard.
+    3. Tap the **✓ checkmark** to save the node.
+  </Step>
+
+  <Step title="Open the Groups screen">
+    Tap the **three-bar menu icon** (☰) in the top-left corner to open the side navigation, then tap **"Groups"**.
+  </Step>
+
+  <Step title="Add your overseas subscription as a group">
+    Tap the **+ icon** to create a new group and fill in the following:
+
+    1. Enter a **group name** that identifies your overseas network.
+    2. Change the group **type** to **"Subscription"**.
+    3. Paste your **overseas transit network subscription link** into the URL field.
+    4. Tap **✓** to save the group. Nekobox will fetch the nodes from the subscription.
+  </Step>
+
+  <Step title="Set the Landing Proxy for the group">
+    Find the group you just created and tap **"Edit"** on it. Inside the group settings, tap **"Landing Proxy"**, then select the **MiyaIP SOCKS5 node** you added in Step 1. This designates MiyaIP's residential IP as the exit point for all traffic routed through this group.
+  </Step>
+
+  <Step title="Open Config and select a network node">
+    Tap the **three-bar menu icon** (☰) again and select **"Config"**. Browse the nodes inside your subscription group and tap on any overseas node you want to use as the first hop.
+  </Step>
+
+  <Step title="Connect">
+    Tap the **paper airplane icon** to initiate the connection. Then tap the **pink area** at the top of the main screen to fully activate the VPN tunnel.
+  </Step>
+
+  <Step title="Verify your connection">
+    Open your browser and visit [whoer.net](https://whoer.net) to confirm that your visible IP address is MiyaIP's residential IP and that the displayed location matches your target country.
+  </Step>
+</Steps>

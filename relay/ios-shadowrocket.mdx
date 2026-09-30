@@ -1,0 +1,48 @@
+---
+title: "Set Up Relay Proxy on iPhone with Shadowrocket"
+sidebarTitle: "iOS Shadowrocket"
+description: "Connect to MiyaIP's relay proxy on your iPhone using Shadowrocket — scan a QR code from the dashboard and start browsing with a residential IP in minutes."
+---
+
+MiyaIP's relay proxy mode lets you route your iPhone traffic through a residential IP without needing an existing overseas VPN. All you need is Shadowrocket and the QR code from your MiyaIP dashboard — no manual configuration required.
+
+<Tip>
+  Shadowrocket is a paid app available on the **US region App Store**. Make sure you are signed in to a US Apple ID before searching for it, as it may not appear in other regional storefronts.
+</Tip>
+
+<Warning>
+  Relay proxy mode is incompatible with other VPN or proxy tools running simultaneously. Before connecting, close and disable any other VPN apps active on your device to avoid conflicts and connection failures.
+</Warning>
+
+## Before You Connect
+
+To ensure your target website sees the correct locale and location metadata, adjust the following settings on your iPhone before launching Shadowrocket:
+
+1. **Disable Location Services** — go to **Settings → Privacy & Security → Location Services** and turn it off.
+2. **Change language and region** — go to **Settings → General → Language & Region** and set both to your target country.
+3. **Change date and time timezone** — go to **Settings → General → Date & Time**, disable "Set Automatically", and select the timezone that matches your target country.
+
+## Find Your QR Code
+
+Log in to your MiyaIP dashboard and navigate to **Static Residential**. Locate the row for your purchased IP and click the **QR icon** in that row. A dialog will appear with three tabs: **Shadowrocket**, **Nekobox**, and **V2ray** — select the **Shadowrocket** tab to display the correct QR code.
+
+## Connect with Shadowrocket
+
+<Steps>
+  <Step title="Open Shadowrocket and tap the scan button">
+    Launch Shadowrocket on your iPhone. Tap the **QR code scan button** in the top-left corner of the home screen to open the camera scanner.
+  </Step>
+  <Step title="Scan the Shadowrocket QR code">
+    Point your camera at the **Shadowrocket QR code** displayed in your MiyaIP dashboard. Shadowrocket will automatically detect the code and import the proxy node configuration.
+  </Step>
+  <Step title="Start the proxy connection">
+    Tap the **rocket button** at the top of the Shadowrocket home screen to enable the proxy. Your iPhone will prompt you to allow a VPN configuration — tap **Allow** and authenticate if asked.
+  </Step>
+  <Step title="Verify your IP address">
+    Open Safari or any browser and navigate to **whoer.net** to confirm that your IP address and location reflect the residential IP you configured in MiyaIP.
+  </Step>
+</Steps>
+
+<Note>
+  On whoer.net, check that the displayed IP matches your MiyaIP residential IP and that the country and anonymity score meet your expectations. If the IP still shows your real location, make sure Location Services is fully disabled and that no other VPN is running in the background.
+</Note>

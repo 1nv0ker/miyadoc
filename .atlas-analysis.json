@@ -1,13 +1,11 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "MiyaIP",
+  "projectType": "saas",
+  "projectName": "MiyaIP",
+  "projectDescription": "MiyaIP is a residential proxy service providing static and dynamic IP addresses for mobile and desktop clients worldwide.",
   "theme": "almond",
-  "colors": {
-    "primary": "#ef7025",
-    "light": "#eec9bc",
-    "dark": "#4fa1ab"
-  },
-  "favicon": "/favicon.svg",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
   "navigation": {
     "tabs": [
       {
@@ -60,11 +58,24 @@
       }
     ]
   },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://miyaip.com"
-    }
-  }
+  "keyFeatures": [
+    "Static Residential IPs (long-term and daily rental)",
+    "Dynamic Residential & Mobile IPs",
+    "TikTok Live dedicated IPs",
+    "Data Center static IPs",
+    "Short-term residential IPs",
+    "Relay (transit) proxy mode for users without overseas environment",
+    "Native (original) SOCKS5 proxy for users with existing overseas environment",
+    "QR code import for Shadowrocket, Nekobox, and V2rayNG",
+    "AdsPower anti-detect browser integration",
+    "AI Tools and Developer API access"
+  ],
+  "publicApiSurface": [
+    "SOCKS5 proxy endpoint (host:port with username/password)",
+    "HTTP/HTTPS proxy endpoint",
+    "Subscription link for proxy node groups",
+    "QR code node import (Shadowrocket / Nekobox / V2ray formats)",
+    "Developer API (开发者 API)",
+    "IP verification via whoer.net"
+  ]
 }

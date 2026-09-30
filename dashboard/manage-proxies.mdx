@@ -1,0 +1,59 @@
+---
+title: "Manage Your MiyaIP Proxies in the Dashboard"
+sidebarTitle: "Manage Proxies"
+description: "View, filter, renew, and export your purchased proxy IPs from the MiyaIP dashboard — including QR code access for Shadowrocket, Nekobox, and V2ray."
+---
+
+The MiyaIP dashboard gives you a centralised place to view and manage every proxy IP you have purchased. From the **Proxy** section in the left sidebar, you can select any proxy type — such as Static Residential — and switch to the **Purchased IPs** (已购IP) tab to see a full table of your active, expiring, and expired IPs. This page explains what each column means, how to retrieve your credentials, and how to keep your proxies renewed and organised.
+
+## Purchased IPs Table
+
+Each row in the Purchased IPs table represents one proxy IP you own. The table includes the following columns:
+
+| Column | Description |
+|---|---|
+| **Region** | The geographic location of the IP (country and/or city). |
+| **Original Proxy** (原始代理) | The direct proxy address in `host:port:user:pass` format. |
+| **Relay Proxy** (中转代理) | An alternative relay address for the same IP, useful when direct access is restricted. |
+| **Device** (设备) | The device binding associated with this IP, if any. |
+| **Notes** (备注) | A free-text label you can set to identify or organise your IPs. |
+| **Status** (状态) | The current status of the IP — see [Status Indicators](#status-indicators) below. |
+| **Expiry** (到期时间) | The date and time when the IP licence expires. |
+| **Renewal** (续费) | An orange **Renew** button to manually extend the IP's subscription. |
+| **Auto-renewal** (自动续费) | A toggle to enable or disable automatic renewal for this IP. |
+
+## Retrieving Your Proxy Credentials
+
+To use an IP in your application or browser, you need the host, port, username, and password. You can get these in two ways:
+
+- **Copy icon** — click the copy icon in the **Original Proxy** or **Relay Proxy** column to copy the full credential string to your clipboard instantly.
+- **QR code icon** — click the QR icon on any IP row to open a credential modal. The modal provides tabs for **Shadowrocket**, **Nekobox**, and **V2ray**, making it easy to import the proxy configuration directly into those mobile or desktop clients by scanning the QR code.
+
+You can also use the **device binding icon** on a row to associate the IP with a specific device for access control purposes.
+
+## Filtering and Searching
+
+When you have a large number of IPs, use the built-in filters to narrow down the list:
+
+- **Filter by region** — select a country or region from the region filter to show only IPs in that location.
+- **Filter by status** — filter the table to display only active, expiring, or expired IPs.
+- **Search by IP address** — type an IP address into the search box to jump directly to a specific entry.
+
+<Tip>
+  Use the **Export** button to download all filtered results as a file. This is useful for bulk importing credentials into third-party tools or keeping an offline record of your proxy inventory.
+</Tip>
+
+## Renewing Your Proxies
+
+When an IP is approaching its expiry date, you can renew it directly from the table:
+
+- **Manual renewal** — click the orange **续费 (Renew)** button on the IP row. You will be taken to the renewal flow where you can select a duration and complete payment.
+- **Auto-renewal** — toggle the **Auto-renewal** switch on any row to have MiyaIP automatically charge your account balance and extend the IP before it expires. VIP members receive a **55% discount** on auto-renewal charges.
+
+## Status Indicators
+
+The **Status** column uses the following labels to communicate the current state of each IP:
+
+- **Active** — the IP is live and ready to use.
+- **Expiring Soon** (即将到期) — the IP is within the expiry warning window. Renew it promptly to avoid interruption.
+- **Expired** — the IP licence has lapsed. The proxy is no longer usable until renewed.

@@ -1,0 +1,73 @@
+---
+title: "MiyaIP Proxy Types: Static, Dynamic, and Live IPs"
+sidebarTitle: "Proxy Types"
+description: "Explore MiyaIP's full range of proxy types — static residential, daily rental, TikTok Live IPs, data center, dynamic residential, mobile, and short-term options."
+---
+
+MiyaIP offers a comprehensive lineup of proxy types to match every use case — from long-term account maintenance that demands a fixed, consistent identity, to high-throughput data workflows that benefit from a constantly rotating IP pool. Understanding the differences between each type helps you choose the right product and avoid unnecessary costs or detection risk.
+
+## Available Proxy Types
+
+<CardGroup cols={2}>
+  <Card title="静态住宅 — Static Residential" icon="house-signal">
+    A **fixed residential IP** assigned exclusively to you for the duration of your subscription. The IP address does not change between sessions, making it ideal for social media accounts, e-commerce storefronts, and any service that flags logins from new or changing IPs. Best choice when consistency and trust-building matter most.
+  </Card>
+  <Card title="静态住宅（日租）— Daily Rental Static Residential" icon="calendar-day">
+    The same fixed residential IP experience as the standard static plan, but billed **by the day** rather than by month. Perfect for short campaigns or one-off tasks where you need a stable identity without committing to a long-term subscription.
+  </Card>
+  <Card title="直播 IP TikTok — TikTok Live IP" icon="circle-play">
+    Dedicated residential IPs **optimized for TikTok live streaming**. These IPs are carefully selected for low latency, high stability, and clean routing to TikTok's infrastructure — reducing the risk of stream drops, region restrictions, or account penalties during live sessions.
+  </Card>
+  <Card title="静态数据中心 — Static Data Center" icon="server">
+    High-speed, stable IPs hosted in professional data centers. Data center IPs offer **faster connection speeds** and higher uptime compared to residential options. Best suited for tasks where raw performance is the priority and residential-level authenticity is not strictly required.
+  </Card>
+  <Card title="动态住宅 — Dynamic Residential" icon="arrows-rotate">
+    A pool of **rotating residential IP addresses** that change with each new connection request or on a set interval. Ideal for web scraping, ad verification, and any task that benefits from appearing as a different residential user on every request.
+  </Card>
+  <Card title="动态移动 — Dynamic Mobile" icon="mobile">
+    Rotating IPs sourced from **real mobile carrier networks** (3G/4G/5G). Mobile IPs carry a high level of trust with most platforms and are especially effective for mobile-first apps, social media automation, and scenarios where carrier-grade IP reputation is advantageous.
+  </Card>
+  <Card title="动态不限量 — Unlimited Dynamic" icon="infinity">
+    Dynamic rotating residential IPs with **no bandwidth cap**. Designed for high-volume use cases such as large-scale scraping, bulk account operations, or continuous monitoring tasks where metered bandwidth would be prohibitively expensive.
+  </Card>
+  <Card title="短效住宅 — Short-term Residential" icon="clock">
+    Residential IPs with a **short validity window** — typically ranging from a few minutes to a few hours. These are well-suited for quick, time-boxed tasks where you need residential authenticity for a brief period without paying for a full day or month of access.
+  </Card>
+</CardGroup>
+
+## Relay Mode vs. Native Mode
+
+Every proxy type above can be used in either of MiyaIP's two connection modes. The right mode depends on whether you already have access to an overseas network.
+
+<Tabs>
+  <Tab title="Relay Proxy (中转代理)">
+    In Relay mode, **MiyaIP provides the full transit relay chain** — you do not need your own VPN or overseas proxy. Your device connects to a MiyaIP relay server, which then routes your traffic through the residential IP exit node. This is the simplest setup and is recommended for most users.
+
+    **When to choose Relay mode:**
+    - You do not have an existing overseas VPN or proxy subscription
+    - You want the fastest and simplest setup experience
+    - You are configuring a mobile device (iOS or Android)
+  </Tab>
+  <Tab title="Native Proxy (原始代理)">
+    In Native mode, you supply your **own first-hop overseas connection** (such as an existing VPN or proxy). MiyaIP's residential IP is then configured as a **SOCKS5 second hop**, layered on top of your existing connection. This creates a two-layer chain: your device → your overseas proxy → MiyaIP residential IP → destination.
+
+    **When to choose Native mode:**
+    - You already have a reliable overseas VPN or proxy
+    - You need maximum IP authenticity (the exit IP is purely residential with no relay fingerprint)
+    - You are using AdsPower or another anti-detect browser where chaining proxies is standard practice
+  </Tab>
+</Tabs>
+
+## Supported Proxy Protocols
+
+MiyaIP residential IPs are accessible over the following standard protocols, compatible with all major proxy clients and browsers:
+
+| Protocol | Description | Recommended Use |
+|----------|-------------|-----------------|
+| **SOCKS5** | Low-level protocol that supports all traffic types including UDP | Mobile apps, anti-detect browsers, native proxy chaining |
+| **HTTP** | Standard HTTP tunneling proxy | Desktop browsers, tools that only support HTTP proxies |
+| **HTTPS** | Encrypted HTTP proxy (HTTP over TLS) | Desktop browsers, secure environments requiring encrypted proxy connections |
+
+<Tip>
+  For most use cases — especially on mobile and in anti-detect browsers — **SOCKS5** is the recommended protocol. It offers the broadest compatibility and supports all traffic types, not just web browsing.
+</Tip>

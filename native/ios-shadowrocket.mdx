@@ -1,0 +1,53 @@
+---
+title: "Set Up Native SOCKS5 Proxy on iPhone with Shadowrocket"
+sidebarTitle: "iOS Shadowrocket"
+description: "Chain MiyaIP's SOCKS5 residential IP as a second-hop proxy on iPhone using Shadowrocket — requires an existing overseas VPN on your device."
+---
+
+Native Proxy mode (原始代理) lets you chain MiyaIP's SOCKS5 residential IP as a **second hop** on top of your existing overseas VPN or proxy network. Instead of routing traffic directly from your device to the residential IP, your first-hop overseas connection acts as the entry tunnel, and MiyaIP's static residential IP becomes the clean exit node that websites see. This guide walks you through configuring that two-layer chain inside Shadowrocket on iPhone.
+
+<Warning>
+  This mode requires an active first-layer overseas network (VPN or proxy) already installed and running on your device **before** you begin. If you do not have an overseas first-hop network, Native Proxy mode will not work correctly.
+</Warning>
+
+## Prerequisites
+
+Before you start, make sure you have the following ready:
+
+- **Shadowrocket** installed on your iPhone (available on the App Store).
+- An **existing overseas VPN or proxy** already configured and active on your device — this is your first hop.
+- Your **MiyaIP SOCKS5 credentials**: IP address, port, username, and password. Find these in the MiyaIP dashboard under **Static Residential → your IP row**.
+- Location Services **disabled** on your device.
+- Your iPhone's **language, region, and date/time** changed to match the target country.
+
+## Setup Steps
+
+<Steps>
+  <Step title="Import the MiyaIP SOCKS5 node">
+    Open Shadowrocket. Tap the **QR code scan icon** in the top-left corner and scan the SOCKS5 node QR code provided in your MiyaIP dashboard. This imports the static residential IP node into Shadowrocket automatically.
+  </Step>
+
+  <Step title="Open the node settings">
+    Locate the newly imported MiyaIP node in your server list. Tap the **exclamation mark (!)** on the right side of the node row to open its detailed settings.
+  </Step>
+
+  <Step title="Navigate to Proxy Via">
+    Inside the node settings, scroll down and tap **"Proxy Via"** (代理通过). This option tells Shadowrocket to route the connection to this node through another proxy — your existing overseas network.
+  </Step>
+
+  <Step title="Select your overseas network as the first hop">
+    From the list of available proxies, select your **own overseas VPN or proxy** as the proxy-through. This designates it as the first hop that MiyaIP's SOCKS5 node will tunnel through.
+  </Step>
+
+  <Step title="Verify settings and save">
+    Return to the node settings screen and confirm that the protocol is set to **SOCKS5** and that all proxy details (IP, port, username, password) are correct. Tap **Save** to apply your changes.
+  </Step>
+
+  <Step title="Connect with the static IP node">
+    Back on the Shadowrocket home screen, select the MiyaIP static IP as your **active node**. Set **Global Route** to **Proxy**, then tap the **rocket button** at the top of the screen to connect.
+  </Step>
+
+  <Step title="Verify your connection">
+    Open your browser and navigate to [whoer.net](https://whoer.net) to confirm that your visible IP address matches the MiyaIP residential IP and that the location reflects the target country.
+  </Step>
+</Steps>

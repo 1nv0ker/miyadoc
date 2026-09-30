@@ -1,0 +1,44 @@
+---
+title: "Integrate MiyaIP with AdsPower Anti-Detect Browser"
+sidebarTitle: "AdsPower Overview"
+description: "Use MiyaIP residential proxies inside AdsPower browser environments to manage multiple accounts with distinct, clean IP identities."
+---
+
+AdsPower is a professional anti-detect browser designed for multi-account management. Each browser profile it creates carries its own isolated fingerprint — a unique combination of user agent, canvas, WebGL, fonts, and dozens of other browser parameters. When you pair an AdsPower profile with a MiyaIP residential proxy, every account you manage appears to originate from a real, distinct device in a real residential location. The result is a convincing, stable identity that is far less likely to trigger platform fraud detection or account bans.
+
+<Note>
+  Don't have AdsPower yet? Download it or create an account using the MiyaIP referral link: [https://www.adspower.net/share/miyaip](https://www.adspower.net/share/miyaip)
+</Note>
+
+## Why MiyaIP and AdsPower Work Well Together
+
+Anti-detect browsers handle the **browser fingerprint** layer — making each profile look like a different device. MiyaIP handles the **network identity** layer — giving each profile a clean residential IP address that matches a real internet user. Together, they cover the two most scrutinised signals that platforms use to link or flag accounts:
+
+- **Fingerprint isolation** — AdsPower ensures no two profiles share canvas hashes, fonts, timezone, or hardware signatures.
+- **Residential IP identity** — MiyaIP provides genuine residential IPs that do not appear on datacenter or proxy blacklists.
+
+## Supported Proxy Types
+
+MiyaIP static residential proxies can be configured in AdsPower using any of the following protocols:
+
+- **SOCKS5** — recommended for most use cases; supports both TCP and UDP traffic.
+- **HTTP** — standard web proxy protocol.
+- **HTTPS** — HTTP with TLS encryption.
+
+You can select your preferred protocol during the proxy configuration step inside AdsPower.
+
+## Next Steps
+
+Ready to set up your first profile? Follow the step-by-step guide to configure a MiyaIP static proxy inside an AdsPower browser environment.
+
+<CardGroup cols={2}>
+  <Card title="Static Proxy Setup" icon="arrow-right" href="/integrations/adspower-static-proxy">
+    Step-by-step guide to extract your MiyaIP credentials and configure them inside an AdsPower browser profile.
+  </Card>
+  <Card title="AdsPower Website" icon="browser" href="https://www.adspower.net/share/miyaip">
+    Download AdsPower or sign up for an account using the MiyaIP referral link.
+  </Card>
+  <Card title="Proxy Types" icon="network-wired" href="/proxy-types">
+    Learn about MiyaIP's full range of proxy types — static residential, rotating residential, and more.
+  </Card>
+</CardGroup>
